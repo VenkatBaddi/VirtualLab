@@ -1,0 +1,8 @@
+D:\Siva PhD\VL 2\VirtualLab\obj\Release\net6.0\PubTmp\Out\VirtualLab.exe
+D:\Siva PhD\VL 2\VirtualLab\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+D:\Siva PhD\VL 2\VirtualLab\obj\Release\net6.0\PubTmp\Out\appsettings.json
+D:\Siva PhD\VL 2\VirtualLab\obj\Release\net6.0\PubTmp\Out\VirtualLab.dll
+D:\Siva PhD\VL 2\VirtualLab\obj\Release\net6.0\PubTmp\Out\VirtualLab.deps.json
+D:\Siva PhD\VL 2\VirtualLab\obj\Release\net6.0\PubTmp\Out\VirtualLab.runtimeconfig.json
+D:\Siva PhD\VL 2\VirtualLab\obj\Release\net6.0\PubTmp\Out\VirtualLab.pdb
+D:\Siva PhD\VL 2\VirtualLab\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll

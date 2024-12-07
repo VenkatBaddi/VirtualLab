@@ -1,0 +1,1442 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    ViewData["Title"] = "Container Management";
+}
+
+<div class="customcontainer">
+    <h2>Instructions</h2>
+    <!-- Top Bar -->
+    <div class="alert alert-primary top-bar">
+        <div id="instructions">
+          Click Soil Heap in Accessory Store
+        </div>
+     </div>
+
+    <!-- Middle Section (30:70 Ratio) -->
+    <div class="d-flex">
+        <!-- Left Side (Menu) -->
+
+        <div class="leftmenu border">
+
+            <div id="Step1">
+
+                <div class="step">
+                    <h2>Sieving</h2>
+                    <ol class="list-group list-group-numbered">
+                        <li id="subStep11" class="list-group-item presentItem">Collect Soil</li>
+                        <li id="subStep12" class="list-group-item">Collect Sieve</li>
+                        <li id="subStep13" class="list-group-item">Place Soil in Sieve</li>
+                        <li id="subStep14" class="list-group-item">Assemble Sieve</li>
+                        <li id="subStep15" class="list-group-item">Sieve Soil</li>
+                        <li id="subStep16" class="list-group-item">Collecting Sieved Soil in Bowl</li>
+                    </ol>
+                </div>
+
+                <!-- Add more steps as needed -->
+                <button class="btn btn-primary w-100" id="Next1" onclick="MoveNextStep(2,event)">Next</button>
+
+            </div>
+
+            <div id="Step2" class="hidden-state">
+
+                <div class="step">
+                    <h2>Weighing Soil</h2>
+                    <ol class="list-group list-group-numbered">
+                    <li id="subStep21" class="list-group-item presentItem">Weigh 10 g of Soil</li>
+                    <li id="subStep22" class="list-group-item">Transfer in Cup1</li>
+                    <li id="subStep23" class="list-group-item">Weigh Soil 10 g of Soil</li>
+                    <li id="subStep24" class="list-group-item">Transfer in Cup2</li>
+                    </ol>
+                 </div>
+
+                <button class="btn btn-primary w-100" id="Next1" onclick="MoveNextStep(3,event)">Next</button>
+            </div>
+
+            <div id="Step3" class="hidden-state">
+
+                <div class="step">
+                    <h2>Placing 10 g of Soil in Distilled Water</h2>
+                    <ol class="list-group list-group-numbered">
+                        <li id="subStep31" class="list-group-item presentItem">Place Glass Jar</li>
+                        <li id="subStep32" class="list-group-item">Place 10 g of Soil</li>
+                        <li id="subStep33" class="list-group-item">Pour Distilled Water Partially </li>
+                        <li id="subStep34" class="list-group-item">Stir with Glass Rod</li>
+                        <li id="subStep35" class="list-group-item">Fill Glass Jar with Water up to the Mark</li>
+                    </ol>
+                </div>
+                <button class="btn btn-primary w-100" id="Next1" onclick="MoveNextStep(4,event)">Next</button>
+            </div>
+
+            <div id="Step4" class="hidden-state">
+                <div class="step">
+                    <h2>Placing 10 g of Soil in Kerosene</h2>
+                    <ol class="list-group list-group-numbered">
+                        <li id="subStep41" class="list-group-item presentItem">Place Glass Jar</li>
+                        <li id="subStep42" class="list-group-item">Place 10 g of Soil</li>
+                        <li id="subStep43" class="list-group-item">Pour Kerosene Partially </li>
+                        <li id="subStep44" class="list-group-item">Stir with Glass Rod</li>
+                        <li id="subStep45" class="list-group-item">Fill Glass Jar with Kerosene up to the Mark</li>
+                    </ol>
+                </div>
+                <button class="btn btn-primary w-100" id="Next1" onclick="MoveNextStep(5,event)">Next</button>
+            </div>
+
+             <form method="post" asp-action="Result">
+                <div id="Step5" class="hidden-state">
+                    <div class="step">
+                        <h2>Processing</h2>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" id="Next1">Next</button>
+                  </div>
+            </form>
+            <div id="Step99" class="hidden-state">
+                <div class="step">
+                    <h2>Processing</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- (Workspace) -->
+        <div id="workspace" class="workspace">
+            <!-- Content for the workspace goes here -->
+
+            <div class="workarea_item" id="div_center-first">
+                <img src="~/images/sand.png" alt="Sand" id="sand_workspace" width="160px" class="hidden-state" draggable="true" ondragstart="dragSand(event)" />
+            </div>
+
+            <div class="workarea_item" id="div_center-right">
+                <img src="~/images/sieve.png" alt="sieve" id="sieve_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropSand(event)" />
+                <img src="~/images/sieve.png" alt="sievesand" id="sievesand_workspace" width="160px" class="hidden-state" draggable="true" ondragstart="dragSieve(event)" />
+                <img src="~/images/bowl.png" alt="bowl" id="bowl_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropPanSand(event)" />
+                <img src="~/images/bowlsand.png" alt="bowlsand" id="bowlsand_workspace" width="160px" class="hidden-state" draggable="true" ondragstart="dragcupsand(event)" />
+            </div>
+
+            <div class="workarea_item" id="div_center">
+                <img src="~/images/pan.png" alt="Pan" id="pan_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropSieve(event)" />
+                <img src="~/images/pan_sieve.png" alt="pan_sieve" id="pan_sieve_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropLid(event)" />
+                <img src="~/images/pan_sieve_lid.png" alt="pan_sieve_lid" id="pan_sieve_lid_workspace" width="160px" class="hidden-state" onclick="shakeSieve(event)" />
+                <img src="~/images/pan_sieve_lid.png" alt="pan_sieve_lid_after_shake" id="pan_sieve_lid_after_shake_workspace" width="160px" class="hidden-state" onclick="separateSieve(event)" />
+                <img src="~/images/pan.png" alt="PanSand" id="pan_sand_workspace" width="160px" class="hidden-state" draggable="true" ondragstart="dragPanSand(event)" />
+            </div>
+
+            <div class="workarea_item" id="div_center-last">
+                <img src="~/images/pan_lid.png" alt="Pan_lid" id="pan_lid_workspace" width="160px" class="hidden-state" draggable="true" ondragstart="dragLid(event)" />
+            </div>
+
+            <div class="inner-div-center-mid-left-1" id="div_center-mid-left-1">
+                <img src="~/images/bowl.png" alt="bow11" id="bowl_1_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup1withSand(event)" />
+                <img src="~/images/bowl_with_soil_10g.png" alt="bow11" id="bowlsand_1_workspace" width="160px" class="hidden-state" onclick="fillWaterJarWithSand(event)" />
+            </div>
+
+             <div class="inner-div-center-mid-left-2" id="div_center-mid-left-2">
+                <img src="~/images/bowl.png" alt="bow12" id="bowl_2_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup2withSand(event)" />
+                <img src="~/images/bowl_with_soil_10g.png" alt="bow12" id="bowlsand_2_workspace" width="160px" class="hidden-state" onclick="fillKerosineJarWithSand(event)" />
+            </div>
+
+            <div class="inner-div-center-mid-left-3" id="div_center-mid-left-3">
+                <img src="~/images/jar.png" alt="jar" id="waterjar_workspace" height="400px" width="200px" class="hidden-state" />
+            </div>
+
+            <div class="inner-div-center-mid-left-4" id="div_center-mid-left-4">
+                <img src="~/images/jar.png" alt="jar" id="kerosinejar_workspace" height="400px" width="200px" class="hidden-state" />
+            </div>
+
+            <div class="inner-div-center-mid" id="div_center-mid">
+                <img src="~/images/watercan.png" alt="WaterCan" id="watercan_workspace" height="100px" class="hidden-state" />
+            </div>
+
+            <div class="inner-div-center-mid-top" id="div_center-mid-top">
+                <img src="~/images/spatula.png" alt="spatula" id="spatula_workspace" height="450px" class="hidden-state" onclick="shakeSpatula(event)" />
+            </div>
+
+            <div class="inner-div-center-mid-right" id="div_center-mid-right">
+                <img src="~/images/kerosinecan.png" alt="KerosineCan" id="kerosinecan_workspace" height="100px" class="hidden-state" />
+            </div>
+
+            <div class="inner-div-center-mid-right-top" id="div_center-mid-right-top">
+                <img src="~/images/spatula.png" alt="spatula" id="kerosinespatula_workspace" height="450px" class="hidden-state" onclick="shakeKerosineSpatula(event)" />
+            </div>
+
+            <div class="inner-div-center-right-end" id="div_center-right-end">
+                <img src="~/images/weighingmachine.png" alt="Weighing_Machine_workspace" id="weighingmachine_workspace" height="100px" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropcupsand(event)" />
+                <img src="~/images/weighingmachinesand.png" alt="Weighing_Machine_sand_workspace" id="weighingmachinesand_workspace" height="100px" class="hidden-state" draggable="true" ondragstart="dragcupsand(event)" />
+            </div>
+
+        </div>
+
+
+        <!-- Right Side -->
+        <div class="rightmenu border">
+
+            <div id="Step1_Images" class="rightmenu-content step1">
+
+                <h2>Accessory Store</h2>
+                <img src="~/images/sand.png" alt="Sand" id="sand_gallery" height="100px" width="200px" />
+                <img src="~/images/sieve.png" alt="Sieve" id="sieve_gallery" height="100px" width="200px"  />
+                <img src="~/images/pan.png" alt="Pan" id="pan_gallery" height="100px" width="200px" />
+                <img src="~/images/pan_lid.png" alt="Pan_lid" id="pan_lid_gallery" height="100px" width="200px"  />
+                <img src="~/images/bowl.png" alt="Bowl" id="bowl_gallery" height="100px" width="200px" onclick="placeBowl(event)" />
+
+            </div>
+
+            <div id="Step2_Images" class="rightmenu-content hidden-state">
+              @*  <img src="~/images/weighingmachine.png" alt="Weighing_Machine_gallery" id="weighingmachine_gallery" height="100px" onclick="placeWeighingMachine(event)" />
+                <img src="~/images/bowl.png" alt="Bowl" id="bowl_1_gallery" height="100px" onclick="placeBowl_1(event)" />
+                <img src="~/images/bowl.png" alt="Bowl" id="bowl_2_gallery" height="100px" onclick="placeBowl_2(event)" />*@
+              
+            </div>
+
+            <div id="Step3_Images" class="rightmenu-content hidden-state">
+                <img src="~/images/jar.png" alt="Jar" id="waterjar_gallery" height="100px" onclick="placeWaterJar(event)" />
+                <img src="~/images/watercan.png" alt="WaterCan" id="watercan_gallery" height="100px" onclick="pourWater(event)" />
+                <img src="~/images/spatula.png" alt="spatula" id="spatula_gallery" height="100px" onclick="placeSpatula(event)" />
+              
+                <img src="~/images/bowl.png" alt="bow11" id="bowl_1_gallery" height="100px" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup1withSand(event)" />
+                <img src="~/images/bowl_with_soil_10g.png" alt="bow11" id="bowlsand_1_gallery" height="100px" class="hidden-state" onclick="fillWaterJarWithSand(event)" />
+                 
+                <img src="~/images/bowl.png" alt="bow12" id="bowl_2_gallery" height="100px" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup2withSand(event)" />
+                <img src="~/images/bowl_with_soil_10g.png" alt="bow12" id="bowlsand_2_gallery" height="100px" class="hidden-state" onclick="fillKerosineJarWithSand(event)" />
+             </div>
+
+
+            <div id="Step4_Images" class="rightmenu-content hidden-state">
+                <img src="~/images/jar.png" alt="Jar" id="kerosinejar_gallery" height="100px" onclick="placeKerosineJar(event)" />
+                <img src="~/images/kerosinecan.png" alt="kerosineCan" id="kerosinecan_gallery" height="100px" onclick="pourKerosine(event)" />
+                <img src="~/images/kerosinespatula.png" alt="kerosinespatula" id="kerosinespatula_gallery" height="100px" onclick="placeKerosineSpatula(event)" />
+                <img src="~/images/bowl.png" alt="bow12" id="bowl_21_gallery" height="100px"  ondragover="allowDrop(event)" ondrop="fillCup2withSand(event)" />
+                <img src="~/images/bowl_with_soil_10g.png" alt="bow12" id="bowlsand_21_gallery" height="100px" onclick="fillKerosineJarWithSand(event)" />
+            </div>
+
+            <div id="Step5_Images" class="rightmenu-content hidden-state">
+                <h2>Accessory Store</h2>
+            </div>
+
+            <div id="Step99_Images" class="rightmenu-content hidden-state">
+                <h2>Accessory Store</h2>
+            </div>
+
+            <!-- Add more buttons/links here -->
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+
+    let substep = 11; // Flag to track whether the glass is placed
+    let waterlevel = 0 ;
+    let kerosinelevel = 0;
+
+    function MoveNextStep(step, ev) {
+        alert(substep);
+        alert(step);
+        ev.preventDefault();
+
+        if (step == 2 && substep >= 16) {
+            document.getElementById("Step2").className = "visible-state";
+
+            document.getElementById("Step1").className = "hidden-state";
+            document.getElementById("Step3").className = "hidden-state";
+            document.getElementById("Step4").className = "hidden-state";
+            document.getElementById("Step5").className = "hidden-state";
+
+
+            document.getElementById("Step2_Images").className = "visible-state";
+
+            document.getElementById("Step1_Images").className = "hidden-state";
+            document.getElementById("Step3_Images").className = "hidden-state";
+            document.getElementById("Step4_Images").className = "hidden-state";
+            document.getElementById("Step5_Images").className = "hidden-state";
+
+            var imagesource = document.getElementById("pan_sand_workspace");
+            imagesource.style.display = "none";
+
+            var imagesource = document.getElementById("weighingmachine_workspace");
+            imagesource.style.display = "block";
+
+            var imagesource = document.getElementById("bowl_1_workspace");
+            imagesource.style.display = "block";
+
+            var imagesource = document.getElementById("bowl_2_workspace");
+            imagesource.style.display = "block";
+
+            substep = 20
+
+            ProcessStepTwo(20, ev)
+
+        }
+        else if (step == 3 && substep >= 24)
+        {
+            document.getElementById("Step3").className = "visible-state";
+
+            document.getElementById("Step1").className = "hidden-state";
+            document.getElementById("Step2").className = "hidden-state";
+            document.getElementById("Step4").className = "hidden-state";
+            document.getElementById("Step5").className = "hidden-state";
+
+            document.getElementById("Step3_Images").className = "visible-state";
+
+            document.getElementById("Step1_Images").className = "hidden-state";
+            document.getElementById("Step2_Images").className = "hidden-state";
+            document.getElementById("Step4_Images").className = "hidden-state";
+            document.getElementById("Step5_Images").className = "hidden-state";
+
+            var imagesource = document.getElementById("pan_sand_workspace");
+            imagesource.style.display = "none";
+
+            var imagesource = document.getElementById("bowlsand_workspace");
+            imagesource.style.display = "none";
+
+            var imagesource = document.getElementById("weighingmachine_workspace");
+            imagesource.style.display = "none";
+
+            var imagesource = document.getElementById("bowlsand_1_workspace");
+            imagesource.style.display = "none";
+
+            var imagesource = document.getElementById("bowlsand_2_workspace");
+            imagesource.style.display = "none";
+
+            var imagesource = document.getElementById("bowlsand_1_gallery");
+            imagesource.style.display = "block";
+
+            var imagesource = document.getElementById("bowlsand_2_gallery");
+            imagesource.style.display = "block";
+
+            substep = 30
+            ProcessStepThree(30, ev)
+        }
+
+        else if (step == 4 && substep >= 35) {
+            document.getElementById("Step4").className = "visible-state";
+
+            document.getElementById("Step1").className = "hidden-state";
+            document.getElementById("Step2").className = "hidden-state";
+            document.getElementById("Step3").className = "hidden-state";
+            document.getElementById("Step5").className = "hidden-state";
+
+
+            document.getElementById("Step4_Images").className = "visible-state";
+
+            document.getElementById("Step1_Images").className = "hidden-state";
+            document.getElementById("Step2_Images").className = "hidden-state";
+            document.getElementById("Step3_Images").className = "hidden-state";
+            document.getElementById("Step5_Images").className = "hidden-state";
+
+       
+       
+
+            substep = 40
+            ProcessStepFour(40, ev)
+        }
+        else if (step == 5 && substep >= 45) {
+
+
+            document.getElementById("instructions").value = "Experiment is under progress";
+
+            document.getElementById("Step5").className = "visible-state";
+
+            document.getElementById("Step1").className = "hidden-state";
+            document.getElementById("Step2").className = "hidden-state";
+            document.getElementById("Step3").className = "hidden-state";
+            document.getElementById("Step4").className = "hidden-state";
+
+            document.getElementById("Step5_Images").className = "visible-state";
+
+            document.getElementById("Step1_Images").className = "hidden-state";
+            document.getElementById("Step2_Images").className = "hidden-state";
+            document.getElementById("Step3_Images").className = "hidden-state";
+            document.getElementById("Step4_Images").className = "hidden-state";
+
+            var imagesource = document.getElementById("bowl_2_workspace");
+            imagesource.style.display = "none";
+         
+            // Create and append the sand element (pseudo-element ::after)
+            var measuringGlass = document.querySelector('.measuring-glass');
+            
+
+            var sand = document.createElement('div');
+            sand.className = 'sandswell';
+            measuringGlass.appendChild(sand);
+
+            var delayInMilliseconds = 5000; //1 second
+            setTimeout(function () {
+       
+
+                ProcessStepOne(60, ev);
+
+
+            }, delayInMilliseconds);
+        
+        }
+
+        else if (step == 99) {
+
+            document.getElementById("instructions").value = "Experiment is under progress";
+
+            document.getElementById("Step99").className = "visible-state";
+
+            document.getElementById("Step1").className = "hidden-state";
+            document.getElementById("Step2").className = "hidden-state";
+            document.getElementById("Step3").className = "hidden-state";
+
+          //  document.getElementById("Step99_Images").className = "visible-state";
+
+            document.getElementById("Step2_Images").className = "hidden-state";
+
+            document.getElementById("Step1_Images").className = "hidden-state";
+            document.getElementById("Step3_Images").className = "hidden-state";
+
+            var imagesource = document.getElementById("pan_sand_workspace");
+            imagesource.style.display = "none";
+
+            var imagesource = document.getElementById("weighingmachine_workspace");
+            imagesource.style.display = "none";
+
+            var imagesource = document.getElementById("bowl_1_workspace");
+            imagesource.style.display = "none";
+
+            var imagesource = document.getElementById("bowl_2_workspace");
+            imagesource.style.display = "none";
+
+
+            var measuringGlass = document.createElement('div');
+            measuringGlass.className = 'measuring-glass';
+
+            // Create the graduated scale
+            var scale = document.createElement('div');
+            scale.className = 'scale';
+
+            // Add graduations to the scale (adjust the number as needed)
+            for (var i = 0; i < 100; i++) {
+                var graduation = document.createElement('div');
+                scale.appendChild(graduation);
+            }
+
+            // Append the scale to the measuring glass container
+            measuringGlass.appendChild(scale);
+
+            // Append the container to the workspace
+            document.querySelector('#workspace').appendChild(measuringGlass);
+
+            var imagesource = document.getElementById("waterjar_workspace");
+            imagesource.style.display = "block";
+          
+            var measuringGlass = document.querySelector('.measuring-glass');
+            var water = document.createElement('div');
+
+           
+            water.className = 'kerosine-full' // 'water-full';
+             
+          
+
+            measuringGlass.appendChild(water);
+            // Create and append the sand element (pseudo-element ::after)
+            var measuringGlass = document.querySelector('.measuring-glass');
+            //measuringGlass.classList.add('fill-sand');
+            var sand = document.createElement('div');
+            sand.className = 'sand';  //'sandswell';
+            measuringGlass.appendChild(sand);
+
+
+
+            // Create a measuring glass container element
+            var measuringGlass = document.createElement('div');
+            measuringGlass.className = 'measuring-glass';
+
+            // Create the graduated scale
+            var scale = document.createElement('div');
+            scale.className = 'scale';
+
+            // Add graduations to the scale (adjust the number as needed)
+            for (var i = 0; i < 100; i++) {
+                var graduation = document.createElement('div');
+                scale.appendChild(graduation);
+            }
+
+            // Append the scale to the measuring glass container
+            measuringGlass.appendChild(scale);
+
+            var imagesource = document.getElementById("kerosinejar_workspace");
+            imagesource.style.display = "block";
+
+            // Append the container to the workspace
+            document.querySelector('#workspace').appendChild(measuringGlass);
+
+
+            var measuringGlass = document.querySelectorAll('.measuring-glass')[1];
+            var kerosine = document.createElement('div');
+
+            kerosine.className = 'water-full';
+             
+
+            measuringGlass.appendChild(kerosine);
+
+        }
+
+    }
+
+    
+    function ProcessStepOne(substepX, ev){
+
+        ev.preventDefault();
+        substep = substep + 1;
+                                    
+        if (substep == 11) {
+            document.getElementById("instructions").value = "Click Soil Heap in Accessory Store";
+
+            document.getElementById("subStep11").className = "list-group-item presentItem";
+
+            document.getElementById("subStep12").className = "list-group-item NormalItem";
+            document.getElementById("subStep13").className = "list-group-item NormalItem";
+            document.getElementById("subStep14").className = "list-group-item NormalItem";
+            document.getElementById("subStep15").className = "list-group-item NormalItem";
+            document.getElementById("subStep16").className = "list-group-item NormalItem";
+
+             
+
+          
+        }
+
+        else if (substep == 12)
+        {
+            document.getElementById("instructions").value = "Click 425 micron Sieve, Pan & Lid in order";
+
+            document.getElementById("subStep12").className = "list-group-item presentItem";
+
+            document.getElementById("subStep11").className = "list-group-item NormalItem";
+            document.getElementById("subStep13").className = "list-group-item NormalItem";
+            document.getElementById("subStep14").className = "list-group-item NormalItem";
+            document.getElementById("subStep15").className = "list-group-item NormalItem";
+            document.getElementById("subStep16").className = "list-group-item NormalItem";
+          
+        }
+        
+        else if (substep == 13){
+            document.getElementById("instructions").value = "Click/Drag on Soil Heap to place in 425 micron sieve.";
+
+            document.getElementById("subStep13").className = "list-group-item presentItem";
+
+            document.getElementById("subStep11").className = "list-group-item NormalItem";
+            document.getElementById("subStep12").className = "list-group-item NormalItem";
+            document.getElementById("subStep14").className = "list-group-item NormalItem";
+            document.getElementById("subStep15").className = "list-group-item NormalItem";
+            document.getElementById("subStep16").className = "list-group-item NormalItem";
+         
+        
+        }
+
+        else if (substep == 14) {
+            document.getElementById("instructions").value = "(a) Drag 425 micron Sieve on Pan to place seat 425 micron sieve over pan. (b) Click/Drag on Lid to place on 425 micron sieve";
+
+            document.getElementById("subStep14").className = "list-group-item presentItem";
+
+            document.getElementById("subStep11").className = "list-group-item NormalItem";
+            document.getElementById("subStep12").className = "list-group-item NormalItem";
+            document.getElementById("subStep13").className = "list-group-item NormalItem";
+            document.getElementById("subStep15").className = "list-group-item NormalItem";
+            document.getElementById("subStep16").className = "list-group-item NormalItem";
+          
+        }
+
+        else if (substep == 15) {
+            document.getElementById("instructions").value = "Click on sieve set to sieve the soil";
+
+            document.getElementById("subStep15").className = "list-group-item presentItem";
+
+            document.getElementById("subStep11").className = "list-group-item NormalItem";
+            document.getElementById("subStep12").className = "list-group-item NormalItem";
+            document.getElementById("subStep13").className = "list-group-item NormalItem";
+            document.getElementById("subStep14").className = "list-group-item NormalItem";
+            document.getElementById("subStep16").className = "list-group-item NormalItem";
+          
+        }
+
+        else if (substep == 16) {
+            document.getElementById("instructions").value = "(a) Click on Lid (b) Click on Sieve (c) Click/Draw on 425 micron sieve over Bowl to transfer the soil";
+
+            document.getElementById("subStep16").className = "list-group-item presentItem";
+
+            document.getElementById("subStep11").className = "list-group-item NormalItem";
+            document.getElementById("subStep12").className = "list-group-item NormalItem";
+            document.getElementById("subStep13").className = "list-group-item NormalItem";
+            document.getElementById("subStep14").className = "list-group-item NormalItem";
+            document.getElementById("subStep15").className = "list-group-item NormalItem";
+        
+
+        }
+
+        
+    }
+
+    function ProcessStepTwo(substepX, ev) {
+
+        substep = substep + 1;
+
+       if (substep == 21) {
+            document.getElementById("instructions").value = "Draw/Click on bowl to weigh 10 g of soil";
+
+            document.getElementById("subStep21").className = "list-group-item presentItem";
+
+            document.getElementById("subStep22").className = "list-group-item NormalItem";
+            document.getElementById("subStep23").className = "list-group-item NormalItem";
+            document.getElementById("subStep24").className = "list-group-item NormalItem";
+         
+
+        }
+
+      else if (substep == 22) {
+            document.getElementById("instructions").value = "Click/Drag on Soil over weighing balance to transfer in Cup1";
+
+            document.getElementById("subStep22").className = "list-group-item presentItem";
+
+            document.getElementById("subStep21").className = "list-group-item NormalItem";
+            document.getElementById("subStep23").className = "list-group-item NormalItem";
+            document.getElementById("subStep24").className = "list-group-item NormalItem";
+          
+            
+        }
+
+        else if (substep == 23) {
+            document.getElementById("instructions").value = "Draw/Click on bowl to weigh 10 g of soil";
+
+            document.getElementById("subStep23").className = "list-group-item presentItem";
+
+            document.getElementById("subStep21").className = "list-group-item NormalItem";
+            document.getElementById("subStep22").className = "list-group-item NormalItem";
+            document.getElementById("subStep24").className = "list-group-item NormalItem";
+          
+     
+        }
+
+        else if (substep == 24) {
+            document.getElementById("instructions").value = "Click/Drag on Soil over weighing balance to transfer in Cup2";
+
+            document.getElementById("subStep24").className = "list-group-item presentItem";
+
+            document.getElementById("subStep21").className = "list-group-item NormalItem";
+            document.getElementById("subStep22").className = "list-group-item NormalItem";
+            document.getElementById("subStep23").className = "list-group-item NormalItem";
+   
+            
+        }
+
+      
+    }
+
+    function ProcessStepThree(substepX, ev) {
+
+        substep = substep + 1;
+
+
+        if (substep == 31) {
+            document.getElementById("instructions").value = "Click/Drag on measuring jar to place in Experiment Area";
+
+            document.getElementById("subStep31").className = "list-group-item presentItem";
+
+            document.getElementById("subStep32").className = "list-group-item NormalItem";
+            document.getElementById("subStep33").className = "list-group-item NormalItem";
+            document.getElementById("subStep34").className = "list-group-item NormalItem";
+            document.getElementById("subStep35").className = "list-group-item NormalItem";
+            
+             
+
+        }
+
+        else if (substep == 32) {
+            document.getElementById("instructions").value = "Click/Drag on cup 1 to place soil in measuring jar";
+
+            document.getElementById("subStep32").className = "list-group-item presentItem";
+
+            document.getElementById("subStep31").className = "list-group-item NormalItem";
+            document.getElementById("subStep33").className = "list-group-item NormalItem";
+            document.getElementById("subStep34").className = "list-group-item NormalItem";
+            document.getElementById("subStep35").className = "list-group-item NormalItem";
+ 
+            
+
+        }
+
+        else if (substep == 33) {
+            document.getElementById("instructions").value = "Click/Drag on distilled water wash bottle to fill measuring jar partially";
+
+            document.getElementById("subStep33").className = "list-group-item presentItem";
+
+            document.getElementById("subStep31").className = "list-group-item NormalItem";
+            document.getElementById("subStep32").className = "list-group-item NormalItem";
+            document.getElementById("subStep34").className = "list-group-item NormalItem";
+            document.getElementById("subStep35").className = "list-group-item NormalItem";
+           
+        }
+
+        else if (substep == 34) {
+            document.getElementById("instructions").value = "Click/Drag on glass rod to stir to remove entrapped air";
+
+            document.getElementById("subStep34").className = "list-group-item presentItem";
+
+            document.getElementById("subStep31").className = "list-group-item NormalItem";
+            document.getElementById("subStep32").className = "list-group-item NormalItem";
+            document.getElementById("subStep33").className = "list-group-item NormalItem";
+            document.getElementById("subStep35").className = "list-group-item NormalItem";
+          
+         
+        }
+
+        else if (substep == 35) {
+            document.getElementById("instructions").value = "Click/Drag on distilled water wash bottle to fill measuring jar up to the mark";
+
+            document.getElementById("subStep35").className = "list-group-item presentItem";
+
+            document.getElementById("subStep31").className = "list-group-item NormalItem";
+            document.getElementById("subStep32").className = "list-group-item NormalItem";
+            document.getElementById("subStep33").className = "list-group-item NormalItem";
+            document.getElementById("subStep34").className = "list-group-item NormalItem";
+            
+           
+        }
+
+      
+
+    }
+
+    function ProcessStepFour(substepX, ev) {
+
+        substep = substep + 1;
+
+
+        if (substep == 41) {
+            document.getElementById("instructions").value = "Click/Drag on measuring jar to place in Experiment Area";
+
+            document.getElementById("subStep41").className = "list-group-item presentItem";
+
+            document.getElementById("subStep42").className = "list-group-item NormalItem";
+            document.getElementById("subStep43").className = "list-group-item NormalItem";
+            document.getElementById("subStep44").className = "list-group-item NormalItem";
+            document.getElementById("subStep45").className = "list-group-item NormalItem";
+
+
+
+        }
+
+        else if (substep == 42) {
+            document.getElementById("instructions").value = "Click/Drag on cup 1 to place soil in measuring jar";
+
+            document.getElementById("subStep42").className = "list-group-item presentItem";
+
+            document.getElementById("subStep41").className = "list-group-item NormalItem";
+            document.getElementById("subStep43").className = "list-group-item NormalItem";
+            document.getElementById("subStep44").className = "list-group-item NormalItem";
+            document.getElementById("subStep45").className = "list-group-item NormalItem";
+
+
+
+        }
+
+        else if (substep == 43) {
+            document.getElementById("instructions").value = "Click/Drag on distilled water wash bottle to fill measuring jar partially";
+
+            document.getElementById("subStep43").className = "list-group-item presentItem";
+
+            document.getElementById("subStep41").className = "list-group-item NormalItem";
+            document.getElementById("subStep42").className = "list-group-item NormalItem";
+            document.getElementById("subStep44").className = "list-group-item NormalItem";
+            document.getElementById("subStep45").className = "list-group-item NormalItem";
+
+        }
+
+        else if (substep == 44) {
+            document.getElementById("instructions").value = "Click/Drag on glass rod to stir to remove entrapped air";
+
+            document.getElementById("subStep44").className = "list-group-item presentItem";
+
+            document.getElementById("subStep41").className = "list-group-item NormalItem";
+            document.getElementById("subStep42").className = "list-group-item NormalItem";
+            document.getElementById("subStep43").className = "list-group-item NormalItem";
+            document.getElementById("subStep45").className = "list-group-item NormalItem";
+
+
+        }
+
+        else if (substep == 45) {
+            document.getElementById("instructions").value = "Click/Drag on distilled water wash bottle to fill measuring jar up to the mark";
+
+            document.getElementById("subStep45").className = "list-group-item presentItem";
+
+            document.getElementById("subStep41").className = "list-group-item NormalItem";
+            document.getElementById("subStep42").className = "list-group-item NormalItem";
+            document.getElementById("subStep43").className = "list-group-item NormalItem";
+            document.getElementById("subStep44").className = "list-group-item NormalItem";
+
+        }
+
+    }
+
+    document.getElementById("sand_gallery").addEventListener("click", function (ev) {
+        ev.preventDefault();
+
+        var image = document.getElementById("sand_workspace");
+        image.style.display = "block";
+
+        var imagesource = document.getElementById("sand_gallery");
+        imagesource.style.display = "none";
+
+        ProcessStepOne(10, ev);
+
+    });
+
+    document.getElementById("pan_gallery").addEventListener("click", function (ev) {
+        ev.preventDefault();
+        if (substep == 12) {
+            var image = document.getElementById("pan_workspace");
+            image.style.display = "block";
+
+            var imagesource = document.getElementById("pan_gallery");
+            imagesource.style.display = "none";
+
+            //ProcessStepOne(10, ev);
+        }
+
+    });
+
+
+    document.getElementById("sieve_gallery").addEventListener("click", function (ev) {
+        if (substep == 12) {
+            var image = document.getElementById("sieve_workspace");
+            image.style.display = "block";
+
+            var imagesource = document.getElementById("sieve_gallery");
+            imagesource.style.display = "none";
+
+            //ProcessStepOne(10, ev);
+        }
+    });
+
+    document.getElementById("pan_lid_gallery").addEventListener("click", function (ev) {
+        if (substep == 12) {
+            var image = document.getElementById("pan_lid_workspace");
+            image.style.display = "block";
+
+            var imagesource = document.getElementById("pan_lid_gallery");
+            imagesource.style.display = "none";
+
+            ProcessStepOne(10, ev);
+        }
+    });
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+
+    function dragSand(ev) {
+        
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function dropSand(ev) {
+    
+        ev.preventDefault();
+
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+
+        var image = document.getElementById("sand_gallery");
+        image.style.display = "none";
+
+        var image = document.getElementById("sieve_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("sievesand_workspace");
+        image.style.display = "block";
+
+        ProcessStepOne(10, ev);
+    }
+
+
+    function dragSieve(ev) {
+
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function dropSieve(ev) {
+         
+        ev.preventDefault();
+
+        var image = document.getElementById("pan_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("sievesand_workspace");
+        image.style.display = "none";
+
+
+        var image = document.getElementById("pan_sieve_workspace");
+        image.style.display = "block";
+
+    //    ProcessStepOne(10, ev);
+
+
+    }
+
+    function dragLid(ev) {
+
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function dropLid(ev) {
+       
+        ev.preventDefault();
+
+        var image = document.getElementById("pan_sieve_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("pan_lid_workspace");
+        image.style.display = "none";
+        
+        var image = document.getElementById("pan_sieve_lid_workspace");
+        image.style.display = "block";
+
+        ProcessStepOne(10, ev);
+    }
+
+    function shakeSieve(ev) {
+        ev.preventDefault();
+
+        document.getElementById('pan_sieve_lid_workspace').className = 'imageshake';
+
+        var delayInMilliseconds = 9000; //1 second
+
+        setTimeout(function () {
+
+            document.getElementById('pan_sieve_lid_workspace').remove('imageshake');
+
+            //your code to be executed after 1 second
+            //var image1 = document.getElementById("pan_sieve_lid_workspace");
+            //image1.style.display = "none";
+
+            var image2 = document.getElementById("pan_sieve_lid_after_shake_workspace");
+            image2.style.display = "block";
+
+            ProcessStepOne(10, ev);
+
+
+        }, delayInMilliseconds);
+
+
+    }
+
+    function separateSieve(ev) {
+        ev.preventDefault();
+        
+        var image2 = document.getElementById("pan_sieve_lid_after_shake_workspace");
+        image2.style.display = "none";
+
+        var image = document.getElementById("pan_sand_workspace");
+        image.style.display = "block";
+
+        var image = document.getElementById("sieve_gallery");
+        image.style.display = "block";
+
+        var image = document.getElementById("pan_lid_gallery");
+        image.style.display = "block";
+
+        ProcessStepOne(10, ev);
+
+    }
+
+
+    function placeSand(ev) {
+        ev.preventDefault();
+
+        var image2 = document.getElementById("sand_gallery");
+        image2.style.display = "none";
+
+        var image = document.getElementById("sand_workspace");
+        image.style.display = "block";
+
+        ProcessStepOne(10, ev);
+
+    }
+
+    function placeBowl(ev) {
+        if (substep == 16) {
+            ev.preventDefault();
+
+            var image2 = document.getElementById("bowl_gallery");
+            image2.style.display = "none";
+
+            var image = document.getElementById("bowl_workspace");
+            image.style.display = "block";
+
+            ProcessStepOne(10, ev);
+        }
+    }
+
+    function placeBowl_1(ev) {
+        ev.preventDefault();
+
+        var image2 = document.getElementById("bowl_1_gallery");
+        image2.style.display = "none";
+
+        var image = document.getElementById("bowl_1_workspace");
+        image.style.display = "block";
+
+        ProcessStepOne(10, ev);
+
+    }
+
+    function placeBowl_2(ev) {
+        ev.preventDefault();
+
+        var image2 = document.getElementById("bowl_2_gallery");
+        image2.style.display = "none";
+
+        var image = document.getElementById("bowl_2_workspace");
+        image.style.display = "block";
+
+        ProcessStepOne(10, ev);
+
+    }
+    
+    function dragPanSand(ev) {
+
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function dropPanSand(ev) {
+        ev.preventDefault();
+
+        var image = document.getElementById("bowl_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("bowlsand_workspace");
+        image.style.display = "block";
+
+        ProcessStepOne(10, ev);
+
+    }
+
+
+    function placeWaterJar(ev) {
+
+         // Create a measuring glass container element
+        var measuringGlass = document.createElement('div');
+        measuringGlass.className = 'measuring-glass';
+
+        // Create the graduated scale
+        var scale = document.createElement('div');
+        scale.className = 'scale';
+
+        // Add graduations to the scale (adjust the number as needed)
+        for (var i = 0; i < 100; i++) {
+            var graduation = document.createElement('div');
+            scale.appendChild(graduation);
+        }
+
+        // Append the scale to the measuring glass container
+        measuringGlass.appendChild(scale);
+
+        // Append the container to the workspace
+        document.querySelector('#workspace').appendChild(measuringGlass);
+
+        var imagesource = document.getElementById("waterjar_workspace");
+        imagesource.style.display = "block";
+
+        var imagesource = document.getElementById("waterjar_gallery");
+        imagesource.style.display = "none";
+
+        ProcessStepThree(30, ev)
+
+    }
+
+    function pourWater(ev){
+
+        if (substep == 33 || substep == 35) {
+
+            ev.preventDefault();
+
+            var image = document.getElementById("watercan_gallery");
+            image.style.display = "none";
+
+
+            var image = document.getElementById("watercan_workspace");
+            image.style.display = "block";
+
+            var measuringGlass = document.querySelector('.measuring-glass');
+            var water = document.createElement('div');
+
+            if (waterlevel==0)
+            {
+                water.className = 'water';
+                waterlevel = 25;
+
+                var delayInMilliseconds = 3000; //1 second
+
+                setTimeout(function () {
+
+                    var image = document.getElementById("watercan_workspace");
+                    image.style.display = "none";
+
+                    var image = document.getElementById("watercan_gallery");
+                    image.style.display = "block";
+         
+                    ProcessStepThree(30, ev)
+
+                }, delayInMilliseconds);
+            }
+
+            else if (waterlevel == 25) {
+                water.className = 'water-full';
+                waterlevel = 100;
+                var delayInMilliseconds = 3000; //1 second
+
+                setTimeout(function () {
+
+                    var image = document.getElementById("watercan_workspace");
+                    image.style.display = "none";
+
+                    var image = document.getElementById("watercan_gallery");
+                    image.style.display = "block";
+
+                    ProcessStepThree(30, ev)
+
+                }, delayInMilliseconds);
+            }
+
+            measuringGlass.appendChild(water);
+
+        }
+
+     }
+
+
+    function placeWeighingMachine(ev) {
+
+        ev.preventDefault();
+
+        var image = document.getElementById("weighingmachine_gallery");
+        image.style.display = "none";
+
+
+        var image = document.getElementById("weighingmachine_workspace");
+        image.style.display = "block";
+
+        var image = document.getElementById("watercan_gallery");
+        image.style.display = "block";
+
+        var image = document.getElementById("watercan_workspace");
+        image.style.display = "none";
+
+        ProcessStepTwo(20, ev)
+
+     }
+
+ 
+
+    function dragcupsand(ev) {
+
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function dropcupsand(ev) {
+        ev.preventDefault();
+
+        
+        var image = document.getElementById("weighingmachine_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("weighingmachinesand_workspace");
+        image.style.display = "block";
+
+        var image = document.getElementById("bowlsand_workspace");
+        image.style.display = "block";
+
+        ProcessStepTwo(20, ev)
+
+        if (waterlevel == 25) {
+            ProcessStepTwo(20, ev)
+        }
+
+        if (kerosinelevel == 25) {
+            var image = document.getElementById("kerosinecan_gallery");
+            image.style.display = "block";
+
+            var image = document.getElementById("kerosinecan_workspace");
+            image.style.display = "none";
+
+            ProcessStepTwo(30, ev)
+
+        }
+
+    }
+
+    function fillCup1withSand(ev) {
+        ev.preventDefault();
+
+
+        var image = document.getElementById("weighingmachine_workspace");
+        image.style.display = "block";
+
+        var image = document.getElementById("weighingmachinesand_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("bowl_1_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("bowlsand_1_workspace");
+        image.style.display = "block";
+   
+        ProcessStepTwo(20, ev)
+
+    }
+
+    function fillCup2withSand(ev) {
+        
+            ev.preventDefault();
+
+
+            var image = document.getElementById("weighingmachine_workspace");
+            image.style.display = "block";
+
+            var image = document.getElementById("weighingmachinesand_workspace");
+            image.style.display = "none";
+
+            var image = document.getElementById("bowl_2_workspace");
+            image.style.display = "none";
+
+            var image = document.getElementById("bowlsand_2_workspace");
+            image.style.display = "block";
+
+            ProcessStepTwo(20, ev)
+        
+    }
+
+    function fillWaterJarWithSand(ev) {
+        if (substep == 32) {
+
+
+            ev.preventDefault();
+
+        
+                // Create and append the sand element (pseudo-element ::after)
+            var measuringGlass = document.querySelector('.measuring-glass');
+            //measuringGlass.classList.add('fill-sand');
+            var sand = document.createElement('div');
+            sand.className = 'sand';
+            measuringGlass.appendChild(sand);
+
+            //var image = document.getElementById("bowl_1_workspace");
+            //image.style.display = "block";
+
+            //var image = document.getElementById("bowlsand_1_workspace");
+            //image.style.display = "none";
+
+            var image = document.getElementById("bowl_1_gallery");
+            image.style.display = "block";
+
+            var image = document.getElementById("bowlsand_1_gallery");
+            image.style.display = "none";
+
+            ProcessStepThree(30, ev)
+         }
+
+       
+    }
+               
+    function fillKerosineJarWithSand(ev) {
+        if (substep == 42) {
+               
+            ev.preventDefault();
+
+
+            // Toggle the 'fill-sand' class on the second glass to fill it with sand
+            var measuringGlass = document.querySelectorAll('.measuring-glass')[1];
+            //secondGlass.classList.toggle('fill-sand');
+            var sand = document.createElement('div');
+            sand.className = 'sand';
+            measuringGlass.appendChild(sand);
+
+            //var image = document.getElementById("bowl_2_workspace");
+            //image.style.display = "block";
+
+            //var image = document.getElementById("bowlsand_2_workspace");
+            //image.style.display = "none";
+
+            var image = document.getElementById("bowl_21_gallery");
+            image.style.display = "block";
+
+            var image = document.getElementById("bowlsand_21_gallery");
+            image.style.display = "none";
+
+            ProcessStepFour(40, ev)
+      
+        }
+    }
+
+    function placeSpatula(ev) {
+        if (substep == 34) {
+            ev.preventDefault();
+
+            var image = document.getElementById("spatula_workspace");
+            image.style.display = "block";
+
+            var imagesource = document.getElementById("spatula_gallery");
+            imagesource.style.display = "none";
+
+            //ProcessStepThree(30, ev)
+
+            shakeSpatula(ev);
+        }
+    }
+
+    function shakeSpatula(ev) {
+        ev.preventDefault();
+
+        document.getElementById('spatula_workspace').className = 'imageshake';
+
+        var delayInMilliseconds = 5000; //1 second
+
+        setTimeout(function () {
+
+            document.getElementById('spatula_workspace').remove('imageshake');
+
+            ProcessStepThree(30, ev);
+
+        }, delayInMilliseconds);
+   }
+
+    
+    function placeKerosineJar(ev) {
+
+        ev.preventDefault();
+
+        // Create a measuring glass container element
+        var measuringGlass = document.createElement('div');
+        measuringGlass.className = 'measuring-glass';
+
+        // Create the graduated scale
+        var scale = document.createElement('div');
+        scale.className = 'scale';
+
+        // Add graduations to the scale (adjust the number as needed)
+        for (var i = 0; i < 100; i++) {
+            var graduation = document.createElement('div');
+            scale.appendChild(graduation);
+        }
+
+        // Append the scale to the measuring glass container
+        measuringGlass.appendChild(scale);
+
+        // Append the container to the workspace
+        document.querySelector('#workspace').appendChild(measuringGlass);
+
+        var imagesource = document.getElementById("kerosinejar_workspace");
+        imagesource.style.display = "block";
+
+        var imagesource = document.getElementById("kerosinejar_gallery");
+        imagesource.style.display = "none";
+
+        ProcessStepFour(40, ev)
+       
+
+    }
+
+
+    function pourKerosine(ev) {
+
+        if (substep == 43 || substep == 45) {
+            ev.preventDefault();
+
+            var image = document.getElementById("kerosinecan_gallery");
+            image.style.display = "none";
+
+        
+            var image = document.getElementById("kerosinecan_workspace");
+            image.style.display = "block";
+
+            var measuringGlass = document.querySelectorAll('.measuring-glass')[1];
+            var kerosine = document.createElement('div');
+        
+            if (kerosinelevel == 0) {
+                kerosine.className = 'kerosine';
+                kerosinelevel = 25;
+                var delayInMilliseconds = 3000; //1 second
+
+                setTimeout(function () {
+
+                    var image = document.getElementById("kerosinecan_workspace");
+                    image.style.display = "none";
+
+                    var image = document.getElementById("kerosinecan_gallery");
+                    image.style.display = "block";
+
+                    ProcessStepFour(40, ev)
+
+                }, delayInMilliseconds);
+             
+            }
+
+            else if (kerosinelevel == 25) {
+            
+                kerosine.className = 'kerosine-full';
+                kerosinelevel = 100;
+                var delayInMilliseconds = 3000; //1 second
+
+                setTimeout(function () {
+
+                    var image = document.getElementById("kerosinecan_workspace");
+                    image.style.display = "none";
+
+                    var image = document.getElementById("kerosinecan_gallery");
+                    image.style.display = "block";
+
+                    ProcessStepFour(40, ev)
+
+                }, delayInMilliseconds);
+             
+            }
+
+            measuringGlass.appendChild(kerosine);
+        }
+ 
+    }
+
+    function placeKerosineSpatula(ev) {
+
+         if (substep == 44) {
+            ev.preventDefault();
+
+            var image = document.getElementById("kerosinespatula_workspace");
+            image.style.display = "block";
+
+            var imagesource = document.getElementById("kerosinespatula_gallery");
+            imagesource.style.display = "none";
+
+            //ProcessStepThree(40, ev)
+
+            shakeKerosineSpatula(ev);
+         }
+    }
+
+    function shakeKerosineSpatula(ev) {
+        ev.preventDefault();
+
+        document.getElementById('kerosinespatula_workspace').className = 'imageshake';
+
+        var delayInMilliseconds = 5000; //1 second
+
+        setTimeout(function () {
+
+            document.getElementById('kerosinespatula_workspace').remove('imageshake');
+   
+            ProcessStepFour(40, ev)
+            
+
+        }, delayInMilliseconds);
+
+
+
+    }
+</script>

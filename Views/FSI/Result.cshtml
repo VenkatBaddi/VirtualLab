@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model VirtualLab.Models.FSIModel
+
+
+
+
+<div class="container d-flex justify-content-center align-items-center vh-50">
+
+    <div class="text-center">
+        <h1>Free Swell Index of Soils - Experiment Results</h1>
+        <br />
+        <br />
+        <form>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Free Swelling Index in %</label>
+                        <input class="form-control" style="min-width: 100px;" value=@Model.FreeSwellingIndex.ToString() />
+                      
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Modified Free Swelling Index</label>
+                        <input class="form-control" style="min-width: 100px;" value=@Model.ModifiedFreeSwellingIndex.ToString() />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Free Swell Ratio</label>
+                        <input class="form-control" style="min-width: 100px;" value=@Model.FreeSwellRatio.ToString() />
+                    </div>
+                </div>
+            </div>
+            <br />
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@page
+@*@model VirtualLab.Views.FSI.IndexModel*@
+
+@model VirtualLab.Models.FSIModel
+         
+@{
+ 
+}
+
+<div class="d-flex justify-content-center align-items-center">
+    <div class="limitFeilds-content">
+        <h1>Free Swell Index of Soils</h1>
+        <br />
+        <br />
+        <form method="post" asp-action="ShowData">
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Enter Liquid Limit of Soil in %</label>
+                        <input class="form-control" name="LiquidLimit" />
+                        
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Enter Plastic Limit of Soil in %</label>
+                        <input class="form-control" name="PlasticLimit" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary w-100">Conduct Experiment</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

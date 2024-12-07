@@ -1,0 +1,587 @@
+﻿/* CSS styles for your layout */
+/*.customcontainer {
+ 
+    width: 80vw;
+    height: 100vh;
+    left: 0;
+
+}*/
+
+/*vh;*/
+
+/*.top-bar {
+    height: 10%;
+    background-color: #333;
+    color: white;
+}*/
+
+.customcontainer{
+    max-width: 1320px;
+    min-width: 1320px;
+}
+
+.limitFeilds-content {
+    min-width: 450px;
+    max-width: 450px;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    border-width: 1px;
+    resize: none;
+    background-color: #DFCCFB;
+    font-weight: 500;
+}
+
+/*.left-section {
+    display: flex;
+    height: 90%;
+    left :10%;
+}*/
+
+
+.leftmenu,
+.rightmenu {
+    width: 250px;
+/*    height: 70%;*/
+    padding: 1rem;
+}
+
+
+
+.leftmenu {
+    background-color: #f8f9fa;
+}
+.leftmenu h2{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.leftmenu a {
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+.rightmenu {
+    background-color: #eee;
+    text-align: center;
+}
+/*.rightmenu .rightmenu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}*/
+.rightmenu h2 {
+    font-size: 28px;
+}
+
+.rightmenu img {
+    width: 160px;
+    height: auto;
+    margin-bottom: 6px;
+}
+
+.rightmenu img:last-child {
+    margin-bottom: 0;
+}
+
+.rightmenu a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+
+.workspace {
+    flex: 1 1 auto;
+    /*    width: 60%;*/
+    /*    height: 70%;*/
+    height: 400px;
+    /*    background-color: #f9f9f9;*/
+    padding: 10px;
+    border-width: 1px;
+    position: relative;
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+}
+
+.hidden-state {
+    display: none;
+}
+
+.visible-state {
+    display: block;
+}
+
+.step {
+/*    background-color: #A0E9FF;
+    border: 1px solid #dee2e6;*/
+/*    padding: 20px;*/
+    margin-bottom: 20px;
+/*    border-radius: 5px;*/
+}
+
+.step1 {
+/*    background-color: #eee;
+    border: 1px solid #dee2e6;
+    padding: 20px;*/
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #DA0C81;
+}
+
+.presentItem {
+    font-weight:bolder;
+}
+
+/*.NormalItem {
+    background: #A0E9FF;
+    font-weight: 100;
+}*/
+
+.workarea_item {
+    width: 160px;
+    margin: 0 10px; 
+}
+
+.inner-div-center-first {
+    position: absolute; /* Position the inner div absolutely */
+    bottom: 0; /* Align the bottom of the inner div with the bottom of the outer div */
+    width: 10%;
+    left: 10%;
+}
+
+.inner-div-center {
+    position: absolute; /* Position the inner div absolutely */
+    bottom: 0; /* Align the bottom of the inner div with the bottom of the outer div */
+    width: 10%;
+    left: 30%;
+}
+
+.inner-div-center-right {
+    position: absolute; /* Position the inner div absolutely */
+    bottom: 0; /* Align the bottom of the inner div with the bottom of the outer div */
+    width: 10%;
+    left: 50%;
+}
+
+
+.inner-div-center-right-end {
+    position: absolute; /* Position the inner div absolutely */
+    bottom: 0; /* Align the bottom of the inner div with the bottom of the outer div */
+    width: 10%;
+    left: 70%;
+}
+
+.inner-div-center-last {
+    position: absolute; /* Position the inner div absolutely */
+    bottom: 0; /* Align the bottom of the inner div with the bottom of the outer div */
+    width: 10%;
+    left: 85%;
+}
+
+.inner-div-center-mid {
+    position: absolute; /* Position the inner div absolutely */
+    width: 10%;
+    left: 33%;
+    top:25%;
+}
+
+.inner-div-center-mid-left-1 {
+    position: absolute; /* Position the inner div absolutely */
+    width: 10%;
+    left: 0%;
+    bottom: 0;
+}
+
+.inner-div-center-mid-left-2 {
+    position: absolute; /* Position the inner div absolutely */
+    width: 10%;
+    left: 20%;
+    bottom: 0;
+}
+
+
+.inner-div-center-mid-left-3 {
+    position: absolute; /* Position the inner div absolutely */
+    width: 10%;
+    left: 20%;
+    bottom: 0;
+}
+
+
+.inner-div-center-mid-left-4 {
+    position: absolute; /* Position the inner div absolutely */
+    width: 10%;
+    left: 43%;
+    bottom: 0;
+}
+.inner-div-center-mid-top {
+    position: absolute; /* Position the inner div absolutely */
+    width: 10%;
+    left: 22%;
+    top: 22%;
+}
+
+.inner-div-center-mid-right {
+    position: absolute; /* Position the inner div absolutely */
+    width: 10%;
+    left: 56%;
+    top: 25%;
+}
+
+.inner-div-center-mid-right-top {
+    position: absolute; /* Position the inner div absolutely */
+    width: 10%;
+    left: 44%;
+    top: 22%;
+}
+
+.imageshake {
+    /*Start the shake animation and make the animation last for 0.5 seconds*/
+    animation: shake 0.5s;
+    /*When the animation is finished, start again*/
+    animation-iteration-count: 1000;
+    /*animation-duration : 8s*/
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+
+.measuring-glass {
+    width: 62px; /* Set the width as needed */
+    height: 400px; /* Set the height as needed */
+    /*position: absolute;*/
+    left: 31%; /* Center horizontally */
+    top: 60%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Center the container */
+    z-index: 1; /* Ensure it's on top of other content */
+    background-color: rgba(255, 255, 255, 0.3); /* Glass-like background color with transparency */
+    /*border: 1px solid #ccc;*/ /* Border for the container */
+    border: 0px ;
+    border-radius: 0px; /* Rounded corners */
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/ /* Box shadow for a 3D effect */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* Set the container as a positioning context for pseudo-elements */top
+    display: inline-block; /* Display glasses as inline-block elements */
+    margin-right: 150px; /* Add spacing between glasses (adjust as needed) */
+}
+
+    .measuring-glass .scale {
+        background-color: rgba(255, 255, 255, 0.3); /* Color for the graduated scale */
+        width: 25%;
+        height: 400%;
+        position: absolute;
+        bottom: 0;
+    }
+
+        .measuring-glass .scale div {
+            width: 100%;
+            height: 400px; /* Height of each graduation */
+            background-color: rgba(255, 255, 255, 0.3); /* Color of the graduations */
+            border-bottom: 1px solid #000; /* Divider lines between graduations */
+        }
+
+
+.measuring-glass-2 {
+    width: 60px; /* Set the width as needed */
+    height: 400px; /* Set the height as needed */
+    /*position: absolute;*/
+    left: 85%; /* Center horizontally */
+    top: 65%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Center the container */
+    z-index: 1; /* Ensure it's on top of other content */
+    background-color: rgba(255, 255, 255, 0.3); /* Glass-like background color with transparency */
+    /*border: 1px solid #ccc;*/ /* Border for the container */
+    border: 0px;
+    border-radius: 0px; /* Rounded corners */
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/ /* Box shadow for a 3D effect */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* Set the container as a positioning context for pseudo-elements */
+
+    display: inline-block; /* Display glasses as inline-block elements */
+    margin-right: 50px; /* Add spacing between glasses (adjust as needed) */
+}
+
+    .measuring-glass-2 .scale-2 {
+        background-color: rgba(255, 255, 255, 0.3); /* Color for the graduated scale */
+        width: 25%;
+        height: 400%;
+        position: absolute;
+        bottom: 0;
+    }
+
+        .measuring-glass-2 .scale-2 div {
+            width: 100%;
+            height: 400px; /* Height of each graduation */
+            background-color: rgba(255, 255, 255, 0.3); /* Color of the graduations */
+            border-bottom: 1px solid #000; /* Divider lines between graduations */
+        }
+
+
+
+.water {
+    background-color: rgba(98, 255, 248, 0.5); /* Color of the water ##9cd3db  #99c0e3 #9cc6ff rgba(153,192,227, 0.5) rgba(9, 195, 219, 0.5) */
+    width: 100%;
+    height: 0; /* Starting height (empty) */
+    position: absolute;
+    bottom: 0;
+    animation: fill-water-half 2s ease-in-out forwards; /* Apply the same filling animation */
+}
+
+
+@keyframes fill-water-half {
+    0% {
+        height: 0; /* Starting height (empty) */
+    }
+
+    100% {
+        height: 20%; /* Final height (halfway) */
+    }
+}
+
+
+.water-full {
+    background-color: rgba(98, 255, 248, 0.5); /* Color of the water ##9cd3db  #99c0e3 #9cc6ff rgba(153,192,227, 0.5) rgba(9, 195, 219, 0.5) rgba(156, 198, 255, 0.5); */
+    width: 100%;
+    height: 0; /* Starting height (empty) */
+    position: absolute;
+    bottom: 0;
+    animation: fill-water-full 2s ease-in-out forwards; /* Apply the same filling animation */
+}
+
+
+@keyframes fill-water-full {
+    0% {
+        height: 0; /* Starting height (empty) */
+    }
+
+    100% {
+        height: 63%; /* Final height (halfway) */
+    }
+}
+
+
+.kerosine {
+    background-color: rgba(147, 255, 230, 0.5); /* Color of the water ##9cd3db  #99c0e3 #9cc6ff rgba(153,192,227, 0.5) rgba(9, 195, 219, 0.5) */
+    width: 100%;
+    height: 0; /* Starting height (empty) */
+    position: absolute;
+    bottom: 0;
+    animation: fill-kerosine-half 2s ease-in-out forwards; /* Apply the same filling animation */
+}
+
+
+@keyframes fill-kerosine-half {
+    0% {
+        height: 0; /* Starting height (empty) */
+    }
+
+    100% {
+        height: 20%; /* Final height (halfway) */
+    }
+}
+
+
+.kerosine-full {
+    background-color: rgba(147, 255, 230, 0.5); /* Color of the water ##9cd3db  #99c0e3 #9cc6ff rgba(153,192,227, 0.5) rgba(9, 195, 219, 0.5) rgba(156, 198, 255, 0.5);*/
+    width: 100%;
+    height: 0; /* Starting height (empty) */
+    position: absolute;
+    bottom: 0;
+    animation: fill-kerosine-full 2s ease-in-out forwards; /* Apply the same filling animation */
+}
+
+@keyframes fill-kerosine-full {
+    0% {
+        height: 0; /* Starting height (empty) */
+    }
+
+    100% {
+        height: 63%; /* Final height (halfway) */
+    }
+}
+
+.sand {
+    background-color: rgb(244, 164, 96,0.5); /* Color of the sand  sandybrown  */
+    width: 100%;
+    height: 0; /* Starting height (empty) */
+    position: absolute;
+    bottom: 0;
+    animation: fill-sand 2s ease-in-out forwards; /* Apply the same filling animation */
+}
+
+
+/* CSS for the sand-filling animation */
+@keyframes fill-sand {
+    0% {
+        height: 0; /* Starting height (empty) */
+    }
+
+    100% {
+        height: 8%; /* Final height (10% of the glass) */
+    }
+}
+
+
+.sandswell {
+    background-color: rgb(244, 164, 96,0.5); /* Color of the sand  sandybrown  */
+    width: 100%;
+    height: 10%; /* Starting height (empty) */
+    position: absolute;
+    bottom: 0;
+    animation: fill-sandswell 10s ease-in-out forwards; /* Apply the same filling animation */
+}
+
+/* CSS for the sand-filling animation */
+@keyframes fill-sandswell {
+    0% {
+        height: 5%; /* Starting height (empty) */
+    }
+
+    50% {
+        height: 8%; /* Starting height (empty) */
+    }
+
+    100% {
+        height: 10%; /* Final height (10% of the glass) */
+    }
+}
+
+.disabled {
+    opacity: 0.5; /* Makes it look faded */
+    pointer-events: none; /* Prevents interaction */
+}
+
+.customcontainer-lab2 {
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack children vertically (top bar and main content) */
+}
+
+.top-bar-lab2 {
+    height: 10%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+}
+
+.left-section-lab2 {
+    display: flex; /* Flexbox for horizontal layout */
+    height: 90%; /* Remaining height after the top bar */
+    left : 10%;
+    flex-direction: column; /* Align horizontally */
+    justify-content: space-between; /* Ensure equal spacing between sections */
+
+}
+
+.leftmenu-lab2 {
+    width: 20%; /* Left menu takes 20% of the width */
+    height: 70%; /* Full height of the remaining content */
+    background-color: #A0E9FF;
+    padding: 10px;
+}
+    .leftmenu-lab2 a {
+        padding: 5px;
+        text-decoration: none;
+        color: #333;
+    }
+
+.workspace-lab2 {
+    width: 60%; /* Workspace takes 60% of the width */
+    height: 70%; /* Full height of the remaining content */
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.inner-div-center-lab2 {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center images horizontally */
+    justify-content: flex-end; /* Align images to the bottom */
+    width: 30%;
+    top: 70%;
+}
+
+.image-container-lab2 {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    gap: 10px; /* Add space between images */
+}
+
+.rightmenu-lab2 {
+    width: 20%; /* Right menu takes 20% of the width */
+    height: 100%; /* Full height of the remaining content */
+    background-color: #eee;
+    padding: 10px;
+}
+
+.rightmenu-lab2 a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+
+ 
+
+ 

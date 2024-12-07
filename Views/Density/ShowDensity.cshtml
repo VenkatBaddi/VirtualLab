@@ -1,0 +1,313 @@
+﻿
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    ViewData["Title"] = "Container Management";
+}
+
+
+<div class="customcontainer">
+    <h2>Instructions</h2>
+    <!-- Top Bar -->
+    <div class="alert alert-primary top-bar">
+        <div id="instructions">
+          Click Weighing machine in Accessory Store
+        </div>
+    </div>
+
+  
+    <!-- Middle Section (30:70 Ratio) -->
+    <div class="d-flex">
+        <!-- Left Side (Menu) -->
+
+        <div class="leftmenu border">
+
+            <div id="Step1">
+
+                <div class="step">
+                    <h2>Experiment</h2>
+                    <ol class="list-group list-group-numbered">
+                        <li id="subStep11" class="list-group-item presentItem">Place Weighing machine</li>
+                        <li id="subStep12" class="list-group-item">Weigh Empty mold</li>
+                        <li id="subStep13" class="list-group-item">Remove Empty mold from Weighing machine</li>
+                        <li id="subStep14" class="list-group-item">Pour soil into mold</li>
+                        <li id="subStep15" class="list-group-item">Weigh mold with soil</li>
+                        <li id="subStep16" class="list-group-item">Remove mold from Weighing machine</li>
+                        <li id="subStep17" class="list-group-item">Place vibrating table</li>
+                        <li id="subStep18" class="list-group-item">Place mold on vibrating table and fix it</li>
+                        <li id="subStep19" class="list-group-item">Place loader on mold</li>
+                        <li id="subStep20" class="list-group-item">Vibrate the table</li>
+                        <li id="subStep21" class="list-group-item">Remove the loader</li>
+                        <li id="subStep22" class="list-group-item">Weigh mold with soil</li>
+                    </ol>
+                </div>
+                <!-- Add more steps as needed -->
+                <button class="btn btn-primary w-100" id="Next1" onclick="MoveNextStep(2,event)">Next</button>
+
+            </div>
+
+            <form method="post" asp-action="Result">
+                <div id="Step5" class="hidden-state">
+
+                    <div class="step">
+                        <h2>Processing</h2>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" id="Next1">Next</button>
+                </div>
+            </form>
+            
+        </div>
+
+        <!-- Right Side (Workspace) -->
+        <div id="workspace" class="workspace">
+            <!-- Content for the workspace goes here -->
+
+            <div class="inner-div-center-first" id="div_center-first">
+
+                
+                <img src="~/images/weighingmachine2.png" alt="wm" id="weighingmachine2_workspace" class="hidden-state" height="100px" width="200px" ondragover="allowDrop(event)" ondrop="dropsandmold(event)" />
+                <img src="~/images/weighingmachine2_withmold.png" alt="wm" id="weighingmachine2withmold_workspace" class="hidden-state" height="100px" width="200px"   />
+                <img src="~/images/weighingmachine2sandmold.png" alt="wm" id="weighingmachine2sandmold_workspace" class="hidden-state" height="100px" width="200px" />
+                <img src="~/images/weighingmachine2moldafter.png" alt="weighingmachine2moldafter_workspace" id="weighingmachine2moldafter_workspace" class="hidden-state" height="100px" width="200px" />
+ 
+
+              @*  <img src="~/images/sand.png" alt="Sand" id="sand_workspace" height="100px" class="hidden-state" draggable="true" ondragstart="dragSand(event)" />*@
+
+            </div>
+
+
+            <div class="inner-div-center" id="div_center">
+                <img src="~/images/empty.png" alt="mold" id="emptymold_workspace" class="hidden-state" height="100px" width="200px" />
+                <img src="~/images/sandmold.png" alt="mold" id="sandmold_workspace" class="hidden-state" height="100px" width="200px" draggable="true" ondragstart="dragsandmold(event)" />
+            </div>
+
+            <div class="inner-div-center-last" id="div_center-last">
+                <img src="~/images/vibrating_table.png" alt="vibrating_table" id="vibrating_table_workspace" class="hidden-state" height="100px" width="200px" ondragover="allowDrop(event)" ondrop="dropmoldsand(event)" />
+                <img src="~/images/vibrating_table_mold.png" alt="vibrating_table_mold" id="vibrating_table_moldsand_workspace" class="hidden-state" height="100px" width="200px" />
+
+                <img src="~/images/vibrating_table_mold_loader.png" alt="vibrating_table-mold_loader" id="vibrating_table_mold_loader_workspace" class="hidden-state" height="100px" width="200px" onclick="shakeTable(event)" />
+
+                <img src="~/images/vibrating_table_mold_loader_after.png" alt="vibrating_table-mold_loader_aftershake" id="vibrating_table_mold_loader_workspace_aftershake" class="hidden-state" height="100px" width="200px"/>
+
+                <img src="~/images/vibrating_table_mold_after.png" alt="vibrating_table_mold_loader_removed" id="vibrating_table_mold_loader_removed" class="hidden-state" height="100px" width="200px" />
+            </div>
+ 
+
+        </div>
+
+        <div class="rightmenu border">
+
+            <div id="Step1_Images" class="step1">
+
+                <h2>Accessory Store</h2>
+                <img src="~/images/empty.png" alt="mold" id="emptymold_gallery" height="100px" width="200px" />
+                <img src="~/images/weighingmachine2.png" alt="wm" id="weighingmachine2_gallery" height="100px" width="200px" />
+
+                <img src="~/images/sand.png" alt="Sand" id="sand_gallery" height="100px" width="200px"  />
+
+                <img src="~/images/vibrating_table.png" alt="Sand" id="vibrating_table_gallery" height="100px" width="200px" />
+                <img src="~/images/loader.png" alt="Sand" id="loader_gallery" height="100px" width="200px" />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+
+    let level = 0;
+
+    document.getElementById("weighingmachine2_gallery").addEventListener("click", function (ev) {
+        ev.preventDefault();
+
+        var image = document.getElementById("weighingmachine2_workspace");
+        image.style.display = "block";
+
+        var imagesource = document.getElementById("weighingmachine2_gallery");
+        imagesource.style.display = "none";
+
+    });
+
+    document.getElementById("emptymold_gallery").addEventListener("click", function (ev) {
+        ev.preventDefault();
+
+        var image = document.getElementById("weighingmachine2_workspace");
+        image.style.display = "none";
+
+
+        var image = document.getElementById("emptymold_gallery");
+        image.style.display = "none";
+
+        var imagesource = document.getElementById("weighingmachine2withmold_workspace");
+        imagesource.style.display = "block";
+    });
+
+    document.getElementById("weighingmachine2withmold_workspace").addEventListener("click", function (ev) {
+        ev.preventDefault();
+
+        var image = document.getElementById("weighingmachine2withmold_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("weighingmachine2_workspace");
+        image.style.display = "block";
+
+        var image = document.getElementById("emptymold_workspace");
+        image.style.display = "block";
+
+
+    });
+
+   
+
+    document.getElementById("vibrating_table_gallery").addEventListener("click", function (ev) {
+        ev.preventDefault();
+
+        var image = document.getElementById("vibrating_table_workspace");
+        image.style.display = "block";
+
+        var imagesource = document.getElementById("vibrating_table_gallery");
+        imagesource.style.display = "none";
+
+    });
+
+    document.getElementById("loader_gallery").addEventListener("click", function (ev) {
+        ev.preventDefault();
+
+        var image = document.getElementById("vibrating_table_mold_loader_workspace");
+        image.style.display = "block";
+
+        var imagesource = document.getElementById("vibrating_table_moldsand_workspace");
+        imagesource.style.display = "none";
+
+        var imagesource = document.getElementById("loader_gallery");
+        imagesource.style.display = "none";
+
+    });
+
+    function dragsandmold(ev) {
+     
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+
+    function dropsandmold(ev) {
+        ev.preventDefault();
+
+        
+        if (level == 25) {
+
+            var image = document.getElementById("weighingmachine2_workspace");
+            image.style.display = "none";
+
+            var image = document.getElementById("weighingmachine2moldafter_workspace");
+            image.style.display = "block";
+
+            var image = document.getElementById("vibrating_table_mold_loader_removed");
+            image.style.display = "none";
+
+            var image = document.getElementById("vibrating_table_workspace");
+            image.style.display = "block";
+        }
+
+        else { 
+        var image = document.getElementById("weighingmachine2_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("weighingmachine2sandmold_workspace");
+        image.style.display = "block";
+
+        var image = document.getElementById("sandmold_workspace");
+        image.style.display = "none";
+        }
+
+
+
+    }
+
+     
+
+    function dropmoldsand(ev) {
+        ev.preventDefault();
+
+
+        var image = document.getElementById("vibrating_table_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("vibrating_table_moldsand_workspace");
+        image.style.display = "block";
+
+        var image = document.getElementById("sandmold_workspace");
+        image.style.display = "none";
+    }
+
+    document.getElementById("weighingmachine2sandmold_workspace").addEventListener("click", function (ev) {
+        ev.preventDefault();
+
+        var image = document.getElementById("weighingmachine2_workspace");
+        image.style.display = "block";
+
+        var image = document.getElementById("weighingmachine2sandmold_workspace");
+        image.style.display = "none";
+
+        var image = document.getElementById("sandmold_workspace");
+        image.style.display = "block";
+
+    });
+
+    document.getElementById("vibrating_table_mold_loader_workspace_aftershake").addEventListener("click", function (ev) {
+        ev.preventDefault();
+
+        var image2 = document.getElementById("vibrating_table_mold_loader_workspace_aftershake");
+        image2.style.display = "none";
+
+        var image2 = document.getElementById("vibrating_table_mold_loader_removed");
+        image2.style.display = "block";
+
+     
+
+        
+
+    });
+
+    function shakeTable(ev) {
+        ev.preventDefault();
+
+         level = 25 ; 
+
+       
+  
+        document.getElementById('vibrating_table_mold_loader_workspace').className = 'imageshake';
+
+        var delayInMilliseconds = 9000; //1 second
+
+        setTimeout(function () {
+
+            document.getElementById('vibrating_table_mold_loader_workspace').remove('imageshake');
+
+            //your code to be executed after 1 second
+            //var image1 = document.getElementById("pan_sieve_lid_workspace");
+            //image1.style.display = "none";
+
+            var image2 = document.getElementById("vibrating_table_mold_loader_workspace_aftershake");
+            image2.style.display = "block";
+ 
+           
+
+
+        }, delayInMilliseconds);
+
+    
+
+    }
+
+
+    
+</script>

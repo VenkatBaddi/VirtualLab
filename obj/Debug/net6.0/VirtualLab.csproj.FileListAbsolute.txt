@@ -1,0 +1,132 @@
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.AssemblyReference.cache
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.GeneratedMSBuildEditorConfig.editorconfig
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.AssemblyInfoInputs.cache
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.AssemblyInfo.cs
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.CoreCompileInputs.cache
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.MvcApplicationPartsAssemblyInfo.cache
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.RazorAssemblyInfo.cache
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.RazorAssemblyInfo.cs
+D:\Siva PhD\VL\VirtualLab\bin\Debug\net6.0\appsettings.Development.json
+D:\Siva PhD\VL\VirtualLab\bin\Debug\net6.0\appsettings.json
+D:\Siva PhD\VL\VirtualLab\bin\Debug\net6.0\VirtualLab.staticwebassets.runtime.json
+D:\Siva PhD\VL\VirtualLab\bin\Debug\net6.0\VirtualLab.exe
+D:\Siva PhD\VL\VirtualLab\bin\Debug\net6.0\VirtualLab.deps.json
+D:\Siva PhD\VL\VirtualLab\bin\Debug\net6.0\VirtualLab.runtimeconfig.json
+D:\Siva PhD\VL\VirtualLab\bin\Debug\net6.0\VirtualLab.dll
+D:\Siva PhD\VL\VirtualLab\bin\Debug\net6.0\VirtualLab.pdb
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.VirtualLab.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.build.VirtualLab.props
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.VirtualLab.props
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.VirtualLab.props
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\staticwebassets.build.json
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\staticwebassets.development.json
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\scopedcss\bundle\VirtualLab.styles.css
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\scopedcss\projectbundle\VirtualLab.bundle.scp.css
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.dll
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\refint\VirtualLab.dll
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.pdb
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\VirtualLab.genruntimeconfig.cache
+D:\Siva PhD\VL\VirtualLab\obj\Debug\net6.0\ref\VirtualLab.dll
+D:\Siva PhD\VL 2\VirtualLab\bin\Debug\net6.0\appsettings.Development.json
+D:\Siva PhD\VL 2\VirtualLab\bin\Debug\net6.0\appsettings.json
+D:\Siva PhD\VL 2\VirtualLab\bin\Debug\net6.0\VirtualLab.staticwebassets.runtime.json
+D:\Siva PhD\VL 2\VirtualLab\bin\Debug\net6.0\VirtualLab.exe
+D:\Siva PhD\VL 2\VirtualLab\bin\Debug\net6.0\VirtualLab.deps.json
+D:\Siva PhD\VL 2\VirtualLab\bin\Debug\net6.0\VirtualLab.runtimeconfig.json
+D:\Siva PhD\VL 2\VirtualLab\bin\Debug\net6.0\VirtualLab.dll
+D:\Siva PhD\VL 2\VirtualLab\bin\Debug\net6.0\VirtualLab.pdb
+D:\Siva PhD\VL 2\VirtualLab\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.AssemblyReference.cache
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.GeneratedMSBuildEditorConfig.editorconfig
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.AssemblyInfoInputs.cache
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.AssemblyInfo.cs
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.CoreCompileInputs.cache
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.MvcApplicationPartsAssemblyInfo.cache
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.RazorAssemblyInfo.cache
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.RazorAssemblyInfo.cs
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.VirtualLab.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.build.VirtualLab.props
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.VirtualLab.props
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.VirtualLab.props
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\staticwebassets.build.json
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\staticwebassets.development.json
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\scopedcss\bundle\VirtualLab.styles.css
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\scopedcss\projectbundle\VirtualLab.bundle.scp.css
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.CopyComplete
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.dll
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\refint\VirtualLab.dll
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.pdb
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\VirtualLab.genruntimeconfig.cache
+D:\Siva PhD\VL 2\VirtualLab\obj\Debug\net6.0\ref\VirtualLab.dll
+D:\Works\VirtualLab\bin\Debug\net6.0\appsettings.Development.json
+D:\Works\VirtualLab\bin\Debug\net6.0\appsettings.json
+D:\Works\VirtualLab\bin\Debug\net6.0\VirtualLab.staticwebassets.runtime.json
+D:\Works\VirtualLab\bin\Debug\net6.0\VirtualLab.exe
+D:\Works\VirtualLab\bin\Debug\net6.0\VirtualLab.deps.json
+D:\Works\VirtualLab\bin\Debug\net6.0\VirtualLab.runtimeconfig.json
+D:\Works\VirtualLab\bin\Debug\net6.0\VirtualLab.dll
+D:\Works\VirtualLab\bin\Debug\net6.0\VirtualLab.pdb
+D:\Works\VirtualLab\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.AssemblyReference.cache
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.GeneratedMSBuildEditorConfig.editorconfig
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.AssemblyInfoInputs.cache
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.AssemblyInfo.cs
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.CoreCompileInputs.cache
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.MvcApplicationPartsAssemblyInfo.cache
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.RazorAssemblyInfo.cache
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.RazorAssemblyInfo.cs
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.sourcelink.json
+D:\Works\VirtualLab\obj\Debug\net6.0\staticwebassets.build.json
+D:\Works\VirtualLab\obj\Debug\net6.0\staticwebassets.development.json
+D:\Works\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.VirtualLab.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Works\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.build.VirtualLab.props
+D:\Works\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.VirtualLab.props
+D:\Works\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.VirtualLab.props
+D:\Works\VirtualLab\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Works\VirtualLab\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Works\VirtualLab\obj\Debug\net6.0\scopedcss\bundle\VirtualLab.styles.css
+D:\Works\VirtualLab\obj\Debug\net6.0\scopedcss\projectbundle\VirtualLab.bundle.scp.css
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.Up2Date
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.dll
+D:\Works\VirtualLab\obj\Debug\net6.0\refint\VirtualLab.dll
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.pdb
+D:\Works\VirtualLab\obj\Debug\net6.0\VirtualLab.genruntimeconfig.cache
+D:\Works\VirtualLab\obj\Debug\net6.0\ref\VirtualLab.dll
+D:\Works\Rajesh@Swayam\VirtualLab\bin\Debug\net6.0\appsettings.Development.json
+D:\Works\Rajesh@Swayam\VirtualLab\bin\Debug\net6.0\appsettings.json
+D:\Works\Rajesh@Swayam\VirtualLab\bin\Debug\net6.0\VirtualLab.staticwebassets.runtime.json
+D:\Works\Rajesh@Swayam\VirtualLab\bin\Debug\net6.0\VirtualLab.exe
+D:\Works\Rajesh@Swayam\VirtualLab\bin\Debug\net6.0\VirtualLab.deps.json
+D:\Works\Rajesh@Swayam\VirtualLab\bin\Debug\net6.0\VirtualLab.runtimeconfig.json
+D:\Works\Rajesh@Swayam\VirtualLab\bin\Debug\net6.0\VirtualLab.dll
+D:\Works\Rajesh@Swayam\VirtualLab\bin\Debug\net6.0\VirtualLab.pdb
+D:\Works\Rajesh@Swayam\VirtualLab\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.AssemblyReference.cache
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.GeneratedMSBuildEditorConfig.editorconfig
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.AssemblyInfoInputs.cache
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.AssemblyInfo.cs
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.CoreCompileInputs.cache
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.MvcApplicationPartsAssemblyInfo.cache
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.RazorAssemblyInfo.cache
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.RazorAssemblyInfo.cs
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.sourcelink.json
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\staticwebassets.build.json
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\staticwebassets.development.json
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.VirtualLab.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.build.VirtualLab.props
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.VirtualLab.props
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.VirtualLab.props
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\scopedcss\bundle\VirtualLab.styles.css
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\scopedcss\projectbundle\VirtualLab.bundle.scp.css
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.csproj.Up2Date
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.dll
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\refint\VirtualLab.dll
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.pdb
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\VirtualLab.genruntimeconfig.cache
+D:\Works\Rajesh@Swayam\VirtualLab\obj\Debug\net6.0\ref\VirtualLab.dll

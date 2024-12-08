@@ -81,7 +81,7 @@ textarea {
 .rightmenu img {
     width: 160px;
     height: auto;
-    margin-bottom: 6px;
+    margin: 0 auto 6px;
 }
 
 .rightmenu img:last-child {
@@ -100,7 +100,7 @@ textarea {
     flex: 1 1 auto;
     /*    width: 60%;*/
     /*    height: 70%;*/
-    height: 400px;
+    height: 480px;
     /*    background-color: #f9f9f9;*/
     padding: 10px;
     border-width: 1px;
@@ -147,10 +147,39 @@ h2 {
     font-weight: 100;
 }*/
 
-.workarea_item {
-    width: 160px;
-    margin: 0 10px; 
+.workarea_itemsGroup {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
 }
+.workarea_itemsGroup img {
+    height: fit-content;
+    width: 160px;
+    margin: 0 10px;
+}
+.workarea_item {
+/*    width: 160px;
+    margin: 0 10px;*/
+}
+.workarea_item_jar{
+    position: relative;
+}
+.workarea_item_jar img {
+    width: 140px;
+}
+.workarea_item_jar .jar-watercan {
+    position: absolute;
+    top: -10px;
+    left: 64px;
+}
+
+.workarea_item_jar .imageshake {
+    position: absolute;
+    top: -40px;
+    left: 0;
+}
+
 
 .inner-div-center-first {
     position: absolute; /* Position the inner div absolutely */
@@ -301,22 +330,17 @@ h2 {
 
 
 .measuring-glass {
-    width: 62px; /* Set the width as needed */
-    height: 400px; /* Set the height as needed */
-    /*position: absolute;*/
-    left: 31%; /* Center horizontally */
-    top: 60%; /* Center vertically */
-    transform: translate(-50%, -50%); /* Center the container */
+    width: 50px; /* Set the width as needed */
+    height: calc(100% - 50px);
+    position: absolute;
+    left: 56px; /* Center horizontally */
+    top: 5px; /* Center vertically */
     z-index: 1; /* Ensure it's on top of other content */
     background-color: rgba(255, 255, 255, 0.3); /* Glass-like background color with transparency */
-    /*border: 1px solid #ccc;*/ /* Border for the container */
     border: 0px ;
-    border-radius: 0px; /* Rounded corners */
-    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/ /* Box shadow for a 3D effect */
+    border-radius: 2px; /* Rounded corners */
     overflow: hidden; /* Hide overflowing content */
-    position: relative; /* Set the container as a positioning context for pseudo-elements */top
     display: inline-block; /* Display glasses as inline-block elements */
-    margin-right: 150px; /* Add spacing between glasses (adjust as needed) */
 }
 
     .measuring-glass .scale {

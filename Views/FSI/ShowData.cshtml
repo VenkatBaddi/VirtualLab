@@ -102,69 +102,89 @@
         <!-- (Workspace) -->
         <div id="workspace" class="workspace">
             <!-- Content for the workspace goes here -->
+            <div class="workarea_itemsGroup">
+                <div class="workarea_item">
+                    <img src="~/images/sand.png" alt="Sand" id="sand_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragSand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/sieve.png" alt="sieve" id="sieve_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropSand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/sieve.png" alt="sievesand" id="sievesand_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragSieve(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/bowl.png" alt="bowl" id="bowl_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropPanSand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/bowlsand.png" alt="bowlsand" id="bowlsand_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragcupsand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/pan.png" alt="Pan" id="pan_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropSieve(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/pan_sieve.png" alt="pan_sieve" id="pan_sieve_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropLid(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/pan_sieve_lid.png" alt="pan_sieve_lid" id="pan_sieve_lid_workspace" width="160" class="hidden-state" onclick="shakeSieve(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/pan_sieve_lid.png" alt="pan_sieve_lid_after_shake" id="pan_sieve_lid_after_shake_workspace" width="160px" class="hidden-state" onclick="separateSieve(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/pan.png" alt="PanSand" id="pan_sand_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragPanSand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/pan_lid.png" alt="Pan_lid" id="pan_lid_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragLid(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/bowl.png" alt="bow11" id="bowl_1_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup1withSand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/bowl_with_soil_10g.png" alt="bow11" id="bowlsand_1_workspace" width="160" class="hidden-state" onclick="fillWaterJarWithSand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/bowl.png" alt="bow12" id="bowl_2_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup2withSand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/bowl_with_soil_10g.png" alt="bow12" id="bowlsand_2_workspace" width="160" class="hidden-state" onclick="fillKerosineJarWithSand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/weighingmachine.png" alt="Weighing_Machine_workspace" id="weighingmachine_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropcupsand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/weighingmachinesand.png" alt="Weighing_Machine_sand_workspace" id="weighingmachinesand_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragcupsand(event)" />
+                </div>
 
-            <div class="workarea_item" id="div_center-first">
-                <img src="~/images/sand.png" alt="Sand" id="sand_workspace" width="160px" class="hidden-state" draggable="true" ondragstart="dragSand(event)" />
-            </div>
+                <div class="workarea_item workarea_item_jar" id="waterjarItem">
+                    <img src="~/images/jar.png" alt="jar" id="waterjar_workspace" width="200px" class="hidden-state" />
+                    <img src="~/images/spatula.png" alt="spatula" id="spatula_workspace" height="450px" class="jar-spatula hidden-state" onclick="shakeSpatula(event)" />
+                    <img src="~/images/watercan.png" alt="WaterCan" id="watercan_workspace" height="100px" class="jar-watercan hidden-state" />
+                </div>
 
-            <div class="workarea_item" id="div_center-right">
-                <img src="~/images/sieve.png" alt="sieve" id="sieve_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropSand(event)" />
-                <img src="~/images/sieve.png" alt="sievesand" id="sievesand_workspace" width="160px" class="hidden-state" draggable="true" ondragstart="dragSieve(event)" />
-                <img src="~/images/bowl.png" alt="bowl" id="bowl_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropPanSand(event)" />
-                <img src="~/images/bowlsand.png" alt="bowlsand" id="bowlsand_workspace" width="160px" class="hidden-state" draggable="true" ondragstart="dragcupsand(event)" />
-            </div>
+                <div class="workarea_item workarea_item_jar" id="kerosinejarItem">
+                    <img src="~/images/jar.png" alt="jar" id="kerosinejar_workspace" width="200px" class="hidden-state" />
+                    <img src="~/images/spatula.png" alt="spatula" id="kerosinespatula_workspace" height="450px" class="jar-spatula hidden-state" onclick="shakeKerosineSpatula(event)" />
+                    <img src="~/images/kerosinecan.png" alt="KerosineCan" id="kerosinecan_workspace" height="100px" class="jar-watercan hidden-state" />
+                </div>
 
-            <div class="workarea_item" id="div_center">
-                <img src="~/images/pan.png" alt="Pan" id="pan_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropSieve(event)" />
-                <img src="~/images/pan_sieve.png" alt="pan_sieve" id="pan_sieve_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropLid(event)" />
-                <img src="~/images/pan_sieve_lid.png" alt="pan_sieve_lid" id="pan_sieve_lid_workspace" width="160px" class="hidden-state" onclick="shakeSieve(event)" />
+                @* <img src="~/images/sieve.png" alt="sieve" id="sieve_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropSand(event)" />
+                <img src="~/images/sieve.png" alt="sievesand" id="sievesand_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragSieve(event)" />
+                <img src="~/images/bowl.png" alt="bowl" id="bowl_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropPanSand(event)" />
+                <img src="~/images/bowlsand.png" alt="bowlsand" id="bowlsand_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragcupsand(event)" />
+                <img src="~/images/pan.png" alt="Pan" id="pan_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropSieve(event)" />
+                <img src="~/images/pan_sieve.png" alt="pan_sieve" id="pan_sieve_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropLid(event)" />
+                <img src="~/images/pan_sieve_lid.png" alt="pan_sieve_lid" id="pan_sieve_lid_workspace" width="160" class="hidden-state" onclick="shakeSieve(event)" />
                 <img src="~/images/pan_sieve_lid.png" alt="pan_sieve_lid_after_shake" id="pan_sieve_lid_after_shake_workspace" width="160px" class="hidden-state" onclick="separateSieve(event)" />
-                <img src="~/images/pan.png" alt="PanSand" id="pan_sand_workspace" width="160px" class="hidden-state" draggable="true" ondragstart="dragPanSand(event)" />
+                <img src="~/images/pan.png" alt="PanSand" id="pan_sand_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragPanSand(event)" />
+                <img src="~/images/pan_lid.png" alt="Pan_lid" id="pan_lid_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragLid(event)" />
+                <img src="~/images/bowl.png" alt="bow11" id="bowl_1_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup1withSand(event)" />
+                <img src="~/images/bowl_with_soil_10g.png" alt="bow11" id="bowlsand_1_workspace" width="160" class="hidden-state" onclick="fillWaterJarWithSand(event)" />
+                <img src="~/images/bowl.png" alt="bow12" id="bowl_2_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup2withSand(event)" />
+                <img src="~/images/bowl_with_soil_10g.png" alt="bow12" id="bowlsand_2_workspace" width="160" class="hidden-state" onclick="fillKerosineJarWithSand(event)" />
+                <img src="~/images/weighingmachine.png" alt="Weighing_Machine_workspace" id="weighingmachine_workspace" width="160" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropcupsand(event)" />
+                <img src="~/images/weighingmachinesand.png" alt="Weighing_Machine_sand_workspace" id="weighingmachinesand_workspace" width="160" class="hidden-state" draggable="true" ondragstart="dragcupsand(event)" /> *@
             </div>
-
-            <div class="workarea_item" id="div_center-last">
-                <img src="~/images/pan_lid.png" alt="Pan_lid" id="pan_lid_workspace" width="160px" class="hidden-state" draggable="true" ondragstart="dragLid(event)" />
-            </div>
-
-            <div class="inner-div-center-mid-left-1" id="div_center-mid-left-1">
-                <img src="~/images/bowl.png" alt="bow11" id="bowl_1_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup1withSand(event)" />
-                <img src="~/images/bowl_with_soil_10g.png" alt="bow11" id="bowlsand_1_workspace" width="160px" class="hidden-state" onclick="fillWaterJarWithSand(event)" />
-            </div>
-
-             <div class="inner-div-center-mid-left-2" id="div_center-mid-left-2">
-                <img src="~/images/bowl.png" alt="bow12" id="bowl_2_workspace" width="160px" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup2withSand(event)" />
-                <img src="~/images/bowl_with_soil_10g.png" alt="bow12" id="bowlsand_2_workspace" width="160px" class="hidden-state" onclick="fillKerosineJarWithSand(event)" />
-            </div>
-
-            <div class="inner-div-center-mid-left-3" id="div_center-mid-left-3">
-                <img src="~/images/jar.png" alt="jar" id="waterjar_workspace" height="400px" width="200px" class="hidden-state" />
-            </div>
-
-            <div class="inner-div-center-mid-left-4" id="div_center-mid-left-4">
-                <img src="~/images/jar.png" alt="jar" id="kerosinejar_workspace" height="400px" width="200px" class="hidden-state" />
-            </div>
-
-            <div class="inner-div-center-mid" id="div_center-mid">
-                <img src="~/images/watercan.png" alt="WaterCan" id="watercan_workspace" height="100px" class="hidden-state" />
-            </div>
-
-            <div class="inner-div-center-mid-top" id="div_center-mid-top">
-                <img src="~/images/spatula.png" alt="spatula" id="spatula_workspace" height="450px" class="hidden-state" onclick="shakeSpatula(event)" />
-            </div>
-
-            <div class="inner-div-center-mid-right" id="div_center-mid-right">
-                <img src="~/images/kerosinecan.png" alt="KerosineCan" id="kerosinecan_workspace" height="100px" class="hidden-state" />
-            </div>
-
-            <div class="inner-div-center-mid-right-top" id="div_center-mid-right-top">
-                <img src="~/images/spatula.png" alt="spatula" id="kerosinespatula_workspace" height="450px" class="hidden-state" onclick="shakeKerosineSpatula(event)" />
-            </div>
-
-            <div class="inner-div-center-right-end" id="div_center-right-end">
-                <img src="~/images/weighingmachine.png" alt="Weighing_Machine_workspace" id="weighingmachine_workspace" height="100px" class="hidden-state" ondragover="allowDrop(event)" ondrop="dropcupsand(event)" />
-                <img src="~/images/weighingmachinesand.png" alt="Weighing_Machine_sand_workspace" id="weighingmachinesand_workspace" height="100px" class="hidden-state" draggable="true" ondragstart="dragcupsand(event)" />
-            </div>
-
+           
         </div>
 
 
@@ -190,9 +210,9 @@
             </div>
 
             <div id="Step3_Images" class="rightmenu-content hidden-state">
-                <img src="~/images/jar.png" alt="Jar" id="waterjar_gallery" height="100px" onclick="placeWaterJar(event)" />
-                <img src="~/images/watercan.png" alt="WaterCan" id="watercan_gallery" height="100px" onclick="pourWater(event)" />
-                <img src="~/images/spatula.png" alt="spatula" id="spatula_gallery" height="100px" onclick="placeSpatula(event)" />
+                <img src="~/images/jar.png" alt="Jar" id="waterjar_gallery" height="100px" onclick="placeWaterJar(event)" style="width:100px" />
+                <img src="~/images/watercan.png" alt="WaterCan" id="watercan_gallery" height="100px" onclick="pourWater(event)"/>
+                <img src="~/images/spatula.png" alt="spatula" id="spatula_gallery" height="100px" onclick="placeSpatula(event)" style="width:120px" />
               
                 <img src="~/images/bowl.png" alt="bow11" id="bowl_1_gallery" height="100px" class="hidden-state" ondragover="allowDrop(event)" ondrop="fillCup1withSand(event)" />
                 <img src="~/images/bowl_with_soil_10g.png" alt="bow11" id="bowlsand_1_gallery" height="100px" class="hidden-state" onclick="fillWaterJarWithSand(event)" />
@@ -203,9 +223,9 @@
 
 
             <div id="Step4_Images" class="rightmenu-content hidden-state">
-                <img src="~/images/jar.png" alt="Jar" id="kerosinejar_gallery" height="100px" onclick="placeKerosineJar(event)" />
+                <img src="~/images/jar.png" alt="Jar" id="kerosinejar_gallery" height="100px" onclick="placeKerosineJar(event)" style="width:100px" />
                 <img src="~/images/kerosinecan.png" alt="kerosineCan" id="kerosinecan_gallery" height="100px" onclick="pourKerosine(event)" />
-                <img src="~/images/kerosinespatula.png" alt="kerosinespatula" id="kerosinespatula_gallery" height="100px" onclick="placeKerosineSpatula(event)" />
+                <img src="~/images/kerosinespatula.png" alt="kerosinespatula" id="kerosinespatula_gallery" height="100px" onclick="placeKerosineSpatula(event)" style="width:120px" />
                 <img src="~/images/bowl.png" alt="bow12" id="bowl_21_gallery" height="100px"  ondragover="allowDrop(event)" ondrop="fillCup2withSand(event)" />
                 <img src="~/images/bowl_with_soil_10g.png" alt="bow12" id="bowlsand_21_gallery" height="100px" onclick="fillKerosineJarWithSand(event)" />
             </div>
@@ -464,7 +484,7 @@
             imagesource.style.display = "block";
 
             // Append the container to the workspace
-            document.querySelector('#workspace').appendChild(measuringGlass);
+            document.querySelector('#kerosinejarItem').appendChild(measuringGlass);
 
 
             var measuringGlass = document.querySelectorAll('.measuring-glass')[1];
@@ -1039,7 +1059,7 @@
         measuringGlass.appendChild(scale);
 
         // Append the container to the workspace
-        document.querySelector('#workspace').appendChild(measuringGlass);
+        document.querySelector('#waterjarItem').appendChild(measuringGlass);
 
         var imagesource = document.getElementById("waterjar_workspace");
         imagesource.style.display = "block";
@@ -1330,7 +1350,7 @@
         measuringGlass.appendChild(scale);
 
         // Append the container to the workspace
-        document.querySelector('#workspace').appendChild(measuringGlass);
+        document.querySelector('#kerosinejarItem').appendChild(measuringGlass);
 
         var imagesource = document.getElementById("kerosinejar_workspace");
         imagesource.style.display = "block";
@@ -1435,8 +1455,6 @@
             
 
         }, delayInMilliseconds);
-
-
 
     }
 </script>

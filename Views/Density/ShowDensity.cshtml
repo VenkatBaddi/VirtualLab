@@ -64,37 +64,43 @@
         <!-- Right Side (Workspace) -->
         <div id="workspace" class="workspace">
             <!-- Content for the workspace goes here -->
-
-            <div class="inner-div-center-first" id="div_center-first">
-
-                
-                <img src="~/images/weighingmachine2.png" alt="wm" id="weighingmachine2_workspace" class="hidden-state" height="100px" width="200px" ondragover="allowDrop(event)" ondrop="dropsandmold(event)" />
-                <img src="~/images/weighingmachine2_withmold.png" alt="wm" id="weighingmachine2withmold_workspace" class="hidden-state" height="100px" width="200px"   />
-                <img src="~/images/weighingmachine2sandmold.png" alt="wm" id="weighingmachine2sandmold_workspace" class="hidden-state" height="100px" width="200px" />
-                <img src="~/images/weighingmachine2moldafter.png" alt="weighingmachine2moldafter_workspace" id="weighingmachine2moldafter_workspace" class="hidden-state" height="100px" width="200px" />
- 
+            <div class="workarea_itemsGroup">
+                <div class="workarea_item">
+                    <img src="~/images/weighingmachine2.png" alt="wm" id="weighingmachine2_workspace" class="hidden-state" width="160" ondragover="allowDrop(event)" ondrop="dropsandmold(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/weighingmachine2_withmold.png" alt="wm" id="weighingmachine2withmold_workspace" class="hidden-state" width="160" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/weighingmachine2sandmold.png" alt="wm" id="weighingmachine2sandmold_workspace" class="hidden-state" width="160" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/weighingmachine2moldafter.png" alt="weighingmachine2moldafter_workspace" id="weighingmachine2moldafter_workspace" class="hidden-state" width="160" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/vibrating_table.png" alt="vibrating_table" id="vibrating_table_workspace" class="hidden-state" height="100px" width="160px" ondragover="allowDrop(event)" ondrop="dropmoldsand(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/vibrating_table_mold.png" alt="vibrating_table_mold" id="vibrating_table_moldsand_workspace" class="hidden-state" height="100px" width="160px" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/vibrating_table_mold_loader.png" alt="vibrating_table-mold_loader" id="vibrating_table_mold_loader_workspace" class="hidden-state" height="100px" width="160px" onclick="shakeTable(event)" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/vibrating_table_mold_loader_after.png" alt="vibrating_table-mold_loader_aftershake" id="vibrating_table_mold_loader_workspace_aftershake" class="hidden-state" height="100px" width="160px" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/vibrating_table_mold_after.png" alt="vibrating_table_mold_loader_removed" id="vibrating_table_mold_loader_removed" class="hidden-state" height="100px" width="160px" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/empty.png" alt="mold" id="emptymold_workspace" class="hidden-state" width="160" />
+                </div>
+                <div class="workarea_item">
+                    <img src="~/images/sandmold.png" alt="mold" id="sandmold_workspace" class="hidden-state" width="160" draggable="true" ondragstart="dragsandmold(event)" />
+                </div>
+            </div>
 
               @*  <img src="~/images/sand.png" alt="Sand" id="sand_workspace" height="100px" class="hidden-state" draggable="true" ondragstart="dragSand(event)" />*@
-
-            </div>
-
-
-            <div class="inner-div-center" id="div_center">
-                <img src="~/images/empty.png" alt="mold" id="emptymold_workspace" class="hidden-state" height="100px" width="200px" />
-                <img src="~/images/sandmold.png" alt="mold" id="sandmold_workspace" class="hidden-state" height="100px" width="200px" draggable="true" ondragstart="dragsandmold(event)" />
-            </div>
-
-            <div class="inner-div-center-last" id="div_center-last">
-                <img src="~/images/vibrating_table.png" alt="vibrating_table" id="vibrating_table_workspace" class="hidden-state" height="100px" width="200px" ondragover="allowDrop(event)" ondrop="dropmoldsand(event)" />
-                <img src="~/images/vibrating_table_mold.png" alt="vibrating_table_mold" id="vibrating_table_moldsand_workspace" class="hidden-state" height="100px" width="200px" />
-
-                <img src="~/images/vibrating_table_mold_loader.png" alt="vibrating_table-mold_loader" id="vibrating_table_mold_loader_workspace" class="hidden-state" height="100px" width="200px" onclick="shakeTable(event)" />
-
-                <img src="~/images/vibrating_table_mold_loader_after.png" alt="vibrating_table-mold_loader_aftershake" id="vibrating_table_mold_loader_workspace_aftershake" class="hidden-state" height="100px" width="200px"/>
-
-                <img src="~/images/vibrating_table_mold_after.png" alt="vibrating_table_mold_loader_removed" id="vibrating_table_mold_loader_removed" class="hidden-state" height="100px" width="200px" />
-            </div>
- 
 
         </div>
 

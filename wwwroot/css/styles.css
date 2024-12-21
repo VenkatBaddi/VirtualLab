@@ -9,11 +9,12 @@
 
 /*vh;*/
 
-/*.top-bar {
-    height: 10%;
+.top-bar {
+/*    height: 10%;
     background-color: #333;
-    color: white;
-}*/
+    color: white;*/
+padding: 0.5rem 1rem;
+}
 
 .customcontainer{
     max-width: 1320px;
@@ -45,7 +46,7 @@ textarea {
 .rightmenu {
     width: 250px;
 /*    height: 70%;*/
-    padding: 1rem;
+    padding: 1rem 0.5rem;
 }
 
 
@@ -56,7 +57,7 @@ textarea {
 .leftmenu h2{
     text-align: center;
     margin-bottom: 10px;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .leftmenu a {
@@ -75,13 +76,14 @@ textarea {
     align-items: center;
 }*/
 .rightmenu h2 {
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .rightmenu img {
-    width: 160px;
+    width: 140px;
     height: auto;
     margin: 0 auto 6px;
+    display: block;
 }
 
 .rightmenu img:last-child {
@@ -98,10 +100,8 @@ textarea {
 
 .workspace {
     flex: 1 1 auto;
-    /*    width: 60%;*/
-    /*    height: 70%;*/
-    height: 480px;
-    /*    background-color: #f9f9f9;*/
+/*    height: 500px;*/
+    align-self: stretch;
     padding: 10px;
     border-width: 1px;
     position: relative;
